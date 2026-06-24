@@ -28,7 +28,7 @@ PLOT_BG = "rgba(0,0,0,0)"
 
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap');
 /* remove the hover "view fullscreen / zoom" button on images (player cards) */
 [data-testid="StyledFullScreenButton"], button[title="View fullscreen"] { display: none !important; }
 /* uniform button height so clickable player names align regardless of name length */
@@ -128,6 +128,47 @@ a.homebtn:hover { color: #ffce6b; text-shadow: 0 0 10px rgba(245, 166, 35, 0.55)
     min-height: 0 !important; padding: 0.3rem 0 !important;
 }
 [data-testid="stPopover"] button p { font-weight: 800 !important; text-decoration: underline !important; }
+/* ===== GLOBAL DESIGN SYSTEM — bring the marketing-site polish into the app ===== */
+/* base typography: Inter everywhere (home hero/brand keep Orbitron via specificity) */
+html, body, .stApp, .stApp p, .stApp li, .stApp span, .stApp label, .stApp input,
+[data-testid="stMarkdownContainer"] { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+/* content headers -> editorial display face */
+.stApp h1, .stApp h2, .stApp h3, .stApp h4 {
+    font-family: 'Space Grotesk', 'Inter', sans-serif; font-weight: 600;
+    letter-spacing: -0.4px; color: #f4f6fb;
+}
+.stApp h1 { font-weight: 700; }
+/* st.metric -> polished glass stat cards with mono numerals */
+[data-testid="stMetric"] {
+    background: linear-gradient(150deg, rgba(28,32,48,0.72), rgba(14,17,26,0.72));
+    border: 1px solid rgba(255,255,255,0.08); border-top: 2px solid rgba(245,166,35,0.55);
+    border-radius: 14px; padding: 0.85rem 1.05rem;
+}
+[data-testid="stMetricValue"] { font-family: 'DM Mono', monospace; color: #f5a623; font-weight: 500; }
+[data-testid="stMetricLabel"], [data-testid="stMetricLabel"] p {
+    color: #98a1b2 !important; letter-spacing: .5px; text-transform: uppercase; font-size: .72rem;
+}
+/* buttons -> subtle glass, accent lift on hover (popover stays borderless via its !important rule) */
+.stButton > button {
+    min-height: 3em; border: 1px solid rgba(255,255,255,0.10);
+    background: linear-gradient(150deg, rgba(28,32,48,0.55), rgba(14,17,26,0.55));
+    color: #e9edf4; border-radius: 10px; font-weight: 600;
+    transition: transform .12s ease, border-color .12s ease, box-shadow .12s ease;
+}
+.stButton > button:hover {
+    border-color: #f5a623; color: #fff; transform: translateY(-2px);
+    box-shadow: 0 8px 20px -8px rgba(245,166,35,0.5);
+}
+/* dataframes/tables -> framed card */
+[data-testid="stDataFrame"], [data-testid="stTable"] {
+    border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; overflow: hidden;
+}
+/* tabs -> accent the active tab */
+.stTabs [data-baseweb="tab-list"] { border-bottom: 1px solid rgba(255,255,255,0.08); }
+.stTabs [aria-selected="true"] p { color: #f5a623 !important; }
+/* misc polish */
+hr { border-color: rgba(255,255,255,0.08) !important; }
+[data-testid="stCaptionContainer"] p { color: #8c93a3 !important; }
 </style>
 """, unsafe_allow_html=True)
 
