@@ -1,0 +1,2154 @@
+{
+  "1630173": {
+    "team": "Sacramento Kings",
+    "abbr": "SAC"
+  },
+  "203500": {
+    "team": "Houston Rockets",
+    "abbr": "HOU"
+  },
+  "1628389": {
+    "team": "Miami Heat",
+    "abbr": "MIA"
+  },
+  "1630534": {
+    "team": "Brooklyn Nets",
+    "abbr": "BKN"
+  },
+  "1630583": {
+    "team": "Memphis Grizzlies",
+    "abbr": "MEM"
+  },
+  "1641725": {
+    "team": "New Orleans Pelicans",
+    "abbr": "NOP"
+  },
+  "1629638": {
+    "team": "Atlanta Hawks",
+    "abbr": "ATL"
+  },
+  "1628960": {
+    "team": "Phoenix Suns",
+    "abbr": "PHX"
+  },
+  "1628386": {
+    "team": "Cleveland Cavaliers",
+    "abbr": "CLE"
+  },
+  "1630631": {
+    "team": "New York Knicks",
+    "abbr": "NYK"
+  },
+  "203937": {
+    "team": "Minnesota Timberwolves",
+    "abbr": "MIN"
+  },
+  "1630828": {
+    "team": "Milwaukee Bucks",
+    "abbr": "MIL"
+  },
+  "203507": {
+    "team": "Milwaukee Bucks",
+    "abbr": "MIL"
+  },
+  "203648": {
+    "team": "Milwaukee Bucks",
+    "abbr": "MIL"
+  },
+  "1628384": {
+    "team": "New York Knicks",
+    "abbr": "NYK"
+  },
+  "1630166": {
+    "team": "Portland Trail Blazers",
+    "abbr": "POR"
+  },
+  "1629028": {
+    "team": "Los Angeles Lakers",
+    "abbr": "LAL"
+  },
+  "1628963": {
+    "team": "Dallas Mavericks",
+    "abbr": "DAL"
+  },
+  "1642846": {
+    "team": "Utah Jazz",
+    "abbr": "UTA"
+  },
+  "1631116": {
+    "team": "Sacramento Kings",
+    "abbr": "SAC"
+  },
+  "1630163": {
+    "team": "Charlotte Hornets",
+    "abbr": "CHA"
+  },
+  "1631094": {
+    "team": "Orlando Magic",
+    "abbr": "ORL"
+  },
+  "1630217": {
+    "team": "Orlando Magic",
+    "abbr": "ORL"
+  },
+  "1630625": {
+    "team": "Boston Celtics",
+    "abbr": "BOS"
+  },
+  "1631230": {
+    "team": "Philadelphia 76ers",
+    "abbr": "PHI"
+  },
+  "203084": {
+    "team": "San Antonio Spurs",
+    "abbr": "SAS"
+  },
+  "1630567": {
+    "team": "Toronto Raptors",
+    "abbr": "TOR"
+  },
+  "1642964": {
+    "team": "Oklahoma City Thunder",
+    "abbr": "OKC"
+  },
+  "1629628": {
+    "team": "Toronto Raptors",
+    "abbr": "TOR"
+  },
+  "1629646": {
+    "team": "Golden State Warriors",
+    "abbr": "GSW"
+  },
+  "1642419": {
+    "team": "Toronto Raptors",
+    "abbr": "TOR"
+  },
+  "201587": {
+    "team": "LA Clippers",
+    "abbr": "LAC"
+  },
+  "203078": {
+    "team": "LA Clippers",
+    "abbr": "LAC"
+  },
+  "1630699": {
+    "team": "Philadelphia 76ers",
+    "abbr": "PHI"
+  },
+  "1642866": {
+    "team": "Minnesota Timberwolves",
+    "abbr": "MIN"
+  },
+  "1630180": {
+    "team": "New Orleans Pelicans",
+    "abbr": "NOP"
+  },
+  "1629048": {
+    "team": "Orlando Magic",
+    "abbr": "ORL"
+  },
+  "202687": {
+    "team": "San Antonio Spurs",
+    "abbr": "SAS"
+  },
+  "1641710": {
+    "team": "Orlando Magic",
+    "abbr": "ORL"
+  },
+  "1641778": {
+    "team": "Washington Wizards",
+    "abbr": "WAS"
+  },
+  "203992": {
+    "team": "LA Clippers",
+    "abbr": "LAC"
+  },
+  "1641737": {
+    "team": "Philadelphia 76ers",
+    "abbr": "PHI"
+  },
+  "1626164": {
+    "team": "Phoenix Suns",
+    "abbr": "PHX"
+  },
+  "1631123": {
+    "team": "Phoenix Suns",
+    "abbr": "PHX"
+  },
+  "1628396": {
+    "team": "Atlanta Hawks",
+    "abbr": "ATL"
+  },
+  "1631128": {
+    "team": "Denver Nuggets",
+    "abbr": "DEN"
+  },
+  "1642886": {
+    "team": "Phoenix Suns",
+    "abbr": "PHX"
+  },
+  "1628969": {
+    "team": "New York Knicks",
+    "abbr": "NYK"
+  },
+  "1628970": {
+    "team": "Charlotte Hornets",
+    "abbr": "CHA"
+  },
+  "1628415": {
+    "team": "Phoenix Suns",
+    "abbr": "PHX"
+  },
+  "1641780": {
+    "team": "Philadelphia 76ers",
+    "abbr": "PHI"
+  },
+  "1628971": {
+    "team": "Denver Nuggets",
+    "abbr": "DEN"
+  },
+  "1627759": {
+    "team": "Boston Celtics",
+    "abbr": "BOS"
+  },
+  "1641738": {
+    "team": "Indiana Pacers",
+    "abbr": "IND"
+  },
+  "1628973": {
+    "team": "New York Knicks",
+    "abbr": "NYK"
+  },
+  "1642868": {
+    "team": "San Antonio Spurs",
+    "abbr": "SAS"
+  },
+  "1628418": {
+    "team": "Cleveland Cavaliers",
+    "abbr": "CLE"
+  },
+  "202710": {
+    "team": "Golden State Warriors",
+    "abbr": "GSW"
+  },
+  "1641824": {
+    "team": "Chicago Bulls",
+    "abbr": "CHI"
+  },
+  "1631288": {
+    "team": "Orlando Magic",
+    "abbr": "ORL"
+  },
+  "203484": {
+    "team": "Memphis Grizzlies",
+    "abbr": "MEM"
+  },
+  "1641739": {
+    "team": "Portland Trail Blazers",
+    "abbr": "POR"
+  },
+  "203991": {
+    "team": "Houston Rockets",
+    "abbr": "HOU"
+  },
+  "1642928": {
+    "team": "Sacramento Kings",
+    "abbr": "SAC"
+  },
+  "1642382": {
+    "team": "Oklahoma City Thunder",
+    "abbr": "OKC"
+  },
+  "1642267": {
+    "team": "Washington Wizards",
+    "abbr": "WAS"
+  },
+  "1642269": {
+    "team": "Sacramento Kings",
+    "abbr": "SAC"
+  },
+  "1628975": {
+    "team": "Orlando Magic",
+    "abbr": "ORL"
+  },
+  "1628976": {
+    "team": "Orlando Magic",
+    "abbr": "ORL"
+  },
+  "1627936": {
+    "team": "Oklahoma City Thunder",
+    "abbr": "OKC"
+  },
+  "1642264": {
+    "team": "San Antonio Spurs",
+    "abbr": "SAS"
+  },
+  "1630658": {
+    "team": "Orlando Magic",
+    "abbr": "ORL"
+  },
+  "1630577": {
+    "team": "San Antonio Spurs",
+    "abbr": "SAS"
+  },
+  "1630551": {
+    "team": "Washington Wizards",
+    "abbr": "WAS"
+  },
+  "1642353": {
+    "team": "LA Clippers",
+    "abbr": "LAC"
+  },
+  "1631108": {
+    "team": "Dallas Mavericks",
+    "abbr": "DAL"
+  },
+  "1630619": {
+    "team": "Dallas Mavericks",
+    "abbr": "DAL"
+  },
+  "1631321": {
+    "team": "Portland Trail Blazers",
+    "abbr": "POR"
+  },
+  "1641740": {
+    "team": "Minnesota Timberwolves",
+    "abbr": "MIN"
+  },
+  "1629634": {
+    "team": "Memphis Grizzlies",
+    "abbr": "MEM"
+  },
+  "203903": {
+    "team": "New York Knicks",
+    "abbr": "NYK"
+  },
+  "1629651": {
+    "team": "Brooklyn Nets",
+    "abbr": "BKN"
+  },
+  "1642383": {
+    "team": "Memphis Grizzlies",
+    "abbr": "MEM"
+  },
+  "1642363": {
+    "team": "Sacramento Kings",
+    "abbr": "SAC"
+  },
+  "1642270": {
+    "team": "Portland Trail Blazers",
+    "abbr": "POR"
+  },
+  "1641730": {
+    "team": "Brooklyn Nets",
+    "abbr": "BKN"
+  },
+  "1629599": {
+    "team": "Phoenix Suns",
+    "abbr": "PHX"
+  },
+  "1642268": {
+    "team": "Utah Jazz",
+    "abbr": "UTA"
+  },
+  "1628381": {
+    "team": "LA Clippers",
+    "abbr": "LAC"
+  },
+  "1628380": {
+    "team": "Chicago Bulls",
+    "abbr": "CHI"
+  },
+  "201144": {
+    "team": "Minnesota Timberwolves",
+    "abbr": "MIN"
+  },
+  "1626192": {
+    "team": "Charlotte Hornets",
+    "abbr": "CHA"
+  },
+  "1630536": {
+    "team": "Washington Wizards",
+    "abbr": "WAS"
+  },
+  "1641731": {
+    "team": "Washington Wizards",
+    "abbr": "WAS"
+  },
+  "1642907": {
+    "team": "Memphis Grizzlies",
+    "abbr": "MEM"
+  },
+  "1642384": {
+    "team": "Houston Rockets",
+    "abbr": "HOU"
+  },
+  "1643018": {
+    "team": "Golden State Warriors",
+    "abbr": "GSW"
+  },
+  "1630595": {
+    "team": "Detroit Pistons",
+    "abbr": "DET"
+  },
+  "203552": {
+    "team": "Golden State Warriors",
+    "abbr": "GSW"
+  },
+  "201939": {
+    "team": "Golden State Warriors",
+    "abbr": "GSW"
+  },
+  "1642359": {
+    "team": "New York Knicks",
+    "abbr": "NYK"
+  },
+  "1630700": {
+    "team": "Atlanta Hawks",
+    "abbr": "ATL"
+  },
+  "203076": {
+    "team": "Washington Wizards",
+    "abbr": "WAS"
+  },
+  "1631120": {
+    "team": "Houston Rockets",
+    "abbr": "HOU"
+  },
+  "201942": {
+    "team": "Sacramento Kings",
+    "abbr": "SAC"
+  },
+  "1642484": {
+    "team": "Atlanta Hawks",
+    "abbr": "ATL"
+  },
+  "1628978": {
+    "team": "Minnesota Timberwolves",
+    "abbr": "MIN"
+  },
+  "1631217": {
+    "team": "Charlotte Hornets",
+    "abbr": "CHA"
+  },
+  "1642885": {
+    "team": "New York Knicks",
+    "abbr": "NYK"
+  },
+  "1641711": {
+    "team": "Toronto Raptors",
+    "abbr": "TOR"
+  },
+  "1630621": {
+    "team": "New Orleans Pelicans",
+    "abbr": "NOP"
+  },
+  "1631172": {
+    "team": "Milwaukee Bucks",
+    "abbr": "MIL"
+  },
+  "1642265": {
+    "team": "Chicago Bulls",
+    "abbr": "CHI"
+  },
+  "1629029": {
+    "team": "Los Angeles Lakers",
+    "abbr": "LAL"
+  },
+  "1629652": {
+    "team": "Oklahoma City Thunder",
+    "abbr": "OKC"
+  },
+  "1630245": {
+    "team": "Minnesota Timberwolves",
+    "abbr": "MIN"
+  },
+  "203083": {
+    "team": "Philadelphia 76ers",
+    "abbr": "PHI"
+  },
+  "1627739": {
+    "team": "LA Clippers",
+    "abbr": "LAC"
+  },
+  "1642346": {
+    "team": "Phoenix Suns",
+    "abbr": "PHX"
+  },
+  "201142": {
+    "team": "Houston Rockets",
+    "abbr": "HOU"
+  },
+  "1631105": {
+    "team": "Detroit Pistons",
+    "abbr": "DET"
+  },
+  "1642856": {
+    "team": "Brooklyn Nets",
+    "abbr": "BKN"
+  },
+  "1631106": {
+    "team": "Houston Rockets",
+    "abbr": "HOU"
+  },
+  "1641744": {
+    "team": "Memphis Grizzlies",
+    "abbr": "MEM"
+  },
+  "1642845": {
+    "team": "Philadelphia 76ers",
+    "abbr": "PHI"
+  },
+  "1630162": {
+    "team": "Minnesota Timberwolves",
+    "abbr": "MIN"
+  },
+  "1642348": {
+    "team": "Philadelphia 76ers",
+    "abbr": "PHI"
+  },
+  "1631165": {
+    "team": "Cleveland Cavaliers",
+    "abbr": "CLE"
+  },
+  "203954": {
+    "team": "Philadelphia 76ers",
+    "abbr": "PHI"
+  },
+  "1642400": {
+    "team": "Cleveland Cavaliers",
+    "abbr": "CLE"
+  },
+  "1642855": {
+    "team": "Chicago Bulls",
+    "abbr": "CHI"
+  },
+  "1630623": {
+    "team": "Brooklyn Nets",
+    "abbr": "BKN"
+  },
+  "1629234": {
+    "team": "Sacramento Kings",
+    "abbr": "SAC"
+  },
+  "1641787": {
+    "team": "Charlotte Hornets",
+    "abbr": "CHA"
+  },
+  "1642847": {
+    "team": "New Orleans Pelicans",
+    "abbr": "NOP"
+  },
+  "1642271": {
+    "team": "Utah Jazz",
+    "abbr": "UTA"
+  },
+  "1627827": {
+    "team": "Houston Rockets",
+    "abbr": "HOU"
+  },
+  "1642843": {
+    "team": "Dallas Mavericks",
+    "abbr": "DAL"
+  },
+  "1642853": {
+    "team": "Phoenix Suns",
+    "abbr": "PHX"
+  },
+  "1631323": {
+    "team": "Miami Heat",
+    "abbr": "MIA"
+  },
+  "1628368": {
+    "team": "San Antonio Spurs",
+    "abbr": "SAS"
+  },
+  "1642402": {
+    "team": "Minnesota Timberwolves",
+    "abbr": "MIN"
+  },
+  "1642277": {
+    "team": "Indiana Pacers",
+    "abbr": "IND"
+  },
+  "1629655": {
+    "team": "Dallas Mavericks",
+    "abbr": "DAL"
+  },
+  "1642066": {
+    "team": "Miami Heat",
+    "abbr": "MIA"
+  },
+  "1629636": {
+    "team": "LA Clippers",
+    "abbr": "LAC"
+  },
+  "1630568": {
+    "team": "Boston Celtics",
+    "abbr": "BOS"
+  },
+  "1641718": {
+    "team": "Utah Jazz",
+    "abbr": "UTA"
+  },
+  "1642273": {
+    "team": "Washington Wizards",
+    "abbr": "WAS"
+  },
+  "202331": {
+    "team": "Philadelphia 76ers",
+    "abbr": "PHI"
+  },
+  "201959": {
+    "team": "Memphis Grizzlies",
+    "abbr": "MEM"
+  },
+  "1630581": {
+    "team": "Chicago Bulls",
+    "abbr": "CHI"
+  },
+  "1642933": {
+    "team": "Atlanta Hawks",
+    "abbr": "ATL"
+  },
+  "1628983": {
+    "team": "Oklahoma City Thunder",
+    "abbr": "OKC"
+  },
+  "1630264": {
+    "team": "Washington Wizards",
+    "abbr": "WAS"
+  },
+  "1631221": {
+    "team": "Phoenix Suns",
+    "abbr": "PHX"
+  },
+  "203497": {
+    "team": "Minnesota Timberwolves",
+    "abbr": "MIN"
+  },
+  "1642884": {
+    "team": "Miami Heat",
+    "abbr": "MIA"
+  },
+  "1642864": {
+    "team": "Boston Celtics",
+    "abbr": "BOS"
+  },
+  "1630692": {
+    "team": "Phoenix Suns",
+    "abbr": "PHX"
+  },
+  "203932": {
+    "team": "Denver Nuggets",
+    "abbr": "DEN"
+  },
+  "203924": {
+    "team": "Portland Trail Blazers",
+    "abbr": "POR"
+  },
+  "1643060": {
+    "team": "Utah Jazz",
+    "abbr": "UTA"
+  },
+  "1631260": {
+    "team": "Milwaukee Bucks",
+    "abbr": "MIL"
+  },
+  "203110": {
+    "team": "Golden State Warriors",
+    "abbr": "GSW"
+  },
+  "1630224": {
+    "team": "Phoenix Suns",
+    "abbr": "PHX"
+  },
+  "1629750": {
+    "team": "Detroit Pistons",
+    "abbr": "DET"
+  },
+  "201145": {
+    "team": "Houston Rockets",
+    "abbr": "HOU"
+  },
+  "1630182": {
+    "team": "Charlotte Hornets",
+    "abbr": "CHA"
+  },
+  "1629656": {
+    "team": "Philadelphia 76ers",
+    "abbr": "PHI"
+  },
+  "1631338": {
+    "team": "Chicago Bulls",
+    "abbr": "CHI"
+  },
+  "1631243": {
+    "team": "Atlanta Hawks",
+    "abbr": "ATL"
+  },
+  "1629060": {
+    "team": "Los Angeles Lakers",
+    "abbr": "LAL"
+  },
+  "1641790": {
+    "team": "Charlotte Hornets",
+    "abbr": "CHA"
+  },
+  "203501": {
+    "team": "Denver Nuggets",
+    "abbr": "DEN"
+  },
+  "201935": {
+    "team": "Cleveland Cavaliers",
+    "abbr": "CLE"
+  },
+  "1630702": {
+    "team": "Washington Wizards",
+    "abbr": "WAS"
+  },
+  "1641989": {
+    "team": "Utah Jazz",
+    "abbr": "UTA"
+  },
+  "1642844": {
+    "team": "San Antonio Spurs",
+    "abbr": "SAS"
+  },
+  "1631199": {
+    "team": "Boston Celtics",
+    "abbr": "BOS"
+  },
+  "203914": {
+    "team": "Milwaukee Bucks",
+    "abbr": "MIL"
+  },
+  "202699": {
+    "team": "Detroit Pistons",
+    "abbr": "DET"
+  },
+  "1628404": {
+    "team": "New York Knicks",
+    "abbr": "NYK"
+  },
+  "1628392": {
+    "team": "Oklahoma City Thunder",
+    "abbr": "OKC"
+  },
+  "1630573": {
+    "team": "Boston Celtics",
+    "abbr": "BOS"
+  },
+  "1641722": {
+    "team": "New Orleans Pelicans",
+    "abbr": "NOP"
+  },
+  "1629637": {
+    "team": "Los Angeles Lakers",
+    "abbr": "LAL"
+  },
+  "1630165": {
+    "team": "Sacramento Kings",
+    "abbr": "SAC"
+  },
+  "1630703": {
+    "team": "Portland Trail Blazers",
+    "abbr": "POR"
+  },
+  "1641707": {
+    "team": "Memphis Grizzlies",
+    "abbr": "MEM"
+  },
+  "1642935": {
+    "team": "Toronto Raptors",
+    "abbr": "TOR"
+  },
+  "1629639": {
+    "team": "Miami Heat",
+    "abbr": "MIA"
+  },
+  "1627741": {
+    "team": "Atlanta Hawks",
+    "abbr": "ATL"
+  },
+  "1629312": {
+    "team": "Phoenix Suns",
+    "abbr": "PHX"
+  },
+  "1642396": {
+    "team": "Utah Jazz",
+    "abbr": "UTA"
+  },
+  "1628988": {
+    "team": "Houston Rockets",
+    "abbr": "HOU"
+  },
+  "201950": {
+    "team": "Portland Trail Blazers",
+    "abbr": "POR"
+  },
+  "1641842": {
+    "team": "Detroit Pistons",
+    "abbr": "DET"
+  },
+  "1641747": {
+    "team": "Denver Nuggets",
+    "abbr": "DEN"
+  },
+  "1631096": {
+    "team": "Oklahoma City Thunder",
+    "abbr": "OKC"
+  },
+  "201143": {
+    "team": "Golden State Warriors",
+    "abbr": "GSW"
+  },
+  "1641724": {
+    "team": "Orlando Magic",
+    "abbr": "ORL"
+  },
+  "1628989": {
+    "team": "Detroit Pistons",
+    "abbr": "DET"
+  },
+  "1630643": {
+    "team": "Indiana Pacers",
+    "abbr": "IND"
+  },
+  "1630574": {
+    "team": "New York Knicks",
+    "abbr": "NYK"
+  },
+  "1629631": {
+    "team": "Sacramento Kings",
+    "abbr": "SAC"
+  },
+  "1643047": {
+    "team": "Phoenix Suns",
+    "abbr": "PHX"
+  },
+  "1630538": {
+    "team": "Minnesota Timberwolves",
+    "abbr": "MIN"
+  },
+  "1642345": {
+    "team": "Phoenix Suns",
+    "abbr": "PHX"
+  },
+  "204060": {
+    "team": "Minnesota Timberwolves",
+    "abbr": "MIN"
+  },
+  "1627742": {
+    "team": "Toronto Raptors",
+    "abbr": "TOR"
+  },
+  "1631127": {
+    "team": "San Antonio Spurs",
+    "abbr": "SAS"
+  },
+  "1628371": {
+    "team": "Orlando Magic",
+    "abbr": "ORL"
+  },
+  "1641713": {
+    "team": "Memphis Grizzlies",
+    "abbr": "MEM"
+  },
+  "1630543": {
+    "team": "LA Clippers",
+    "abbr": "LAC"
+  },
+  "1631245": {
+    "team": "Indiana Pacers",
+    "abbr": "IND"
+  },
+  "1641748": {
+    "team": "Milwaukee Bucks",
+    "abbr": "MIL"
+  },
+  "1628991": {
+    "team": "Utah Jazz",
+    "abbr": "UTA"
+  },
+  "1631218": {
+    "team": "Toronto Raptors",
+    "abbr": "TOR"
+  },
+  "1642857": {
+    "team": "Miami Heat",
+    "abbr": "MIA"
+  },
+  "1642355": {
+    "team": "Los Angeles Lakers",
+    "abbr": "LAL"
+  },
+  "2544": {
+    "team": "Los Angeles Lakers",
+    "abbr": "LAL"
+  },
+  "1642883": {
+    "team": "Charlotte Hornets",
+    "abbr": "CHA"
+  },
+  "1631170": {
+    "team": "Miami Heat",
+    "abbr": "MIA"
+  },
+  "1641998": {
+    "team": "New York Knicks",
+    "abbr": "NYK"
+  },
+  "1642450": {
+    "team": "Detroit Pistons",
+    "abbr": "DET"
+  },
+  "1629660": {
+    "team": "Memphis Grizzlies",
+    "abbr": "MEM"
+  },
+  "1630198": {
+    "team": "Oklahoma City Thunder",
+    "abbr": "OKC"
+  },
+  "1642358": {
+    "team": "Dallas Mavericks",
+    "abbr": "DAL"
+  },
+  "1629661": {
+    "team": "Denver Nuggets",
+    "abbr": "DEN"
+  },
+  "1643052": {
+    "team": "Brooklyn Nets",
+    "abbr": "BKN"
+  },
+  "1630552": {
+    "team": "Atlanta Hawks",
+    "abbr": "ATL"
+  },
+  "1629640": {
+    "team": "San Antonio Spurs",
+    "abbr": "SAS"
+  },
+  "1642352": {
+    "team": "Miami Heat",
+    "abbr": "MIA"
+  },
+  "1642848": {
+    "team": "Washington Wizards",
+    "abbr": "WAS"
+  },
+  "203999": {
+    "team": "Denver Nuggets",
+    "abbr": "DEN"
+  },
+  "1642938": {
+    "team": "Denver Nuggets",
+    "abbr": "DEN"
+  },
+  "1641794": {
+    "team": "New York Knicks",
+    "abbr": "NYK"
+  },
+  "1630529": {
+    "team": "New Orleans Pelicans",
+    "abbr": "NOP"
+  },
+  "1642403": {
+    "team": "Detroit Pistons",
+    "abbr": "DET"
+  },
+  "1642880": {
+    "team": "Indiana Pacers",
+    "abbr": "IND"
+  },
+  "1642461": {
+    "team": "Denver Nuggets",
+    "abbr": "DEN"
+  },
+  "1630200": {
+    "team": "Chicago Bulls",
+    "abbr": "CHI"
+  },
+  "1626145": {
+    "team": "Denver Nuggets",
+    "abbr": "DEN"
+  },
+  "1642357": {
+    "team": "San Antonio Spurs",
+    "abbr": "SAS"
+  },
+  "1627884": {
+    "team": "LA Clippers",
+    "abbr": "LAC"
+  },
+  "201599": {
+    "team": "New Orleans Pelicans",
+    "abbr": "NOP"
+  },
+  "1631107": {
+    "team": "Miami Heat",
+    "abbr": "MIA"
+  },
+  "1641750": {
+    "team": "Charlotte Hornets",
+    "abbr": "CHA"
+  },
+  "1642530": {
+    "team": "Chicago Bulls",
+    "abbr": "CHI"
+  },
+  "1631211": {
+    "team": "Miami Heat",
+    "abbr": "MIA"
+  },
+  "1628379": {
+    "team": "Los Angeles Lakers",
+    "abbr": "LAL"
+  },
+  "1643257": {
+    "team": "Portland Trail Blazers",
+    "abbr": "POR"
+  },
+  "1631117": {
+    "team": "Utah Jazz",
+    "abbr": "UTA"
+  },
+  "1630557": {
+    "team": "Atlanta Hawks",
+    "abbr": "ATL"
+  },
+  "1628467": {
+    "team": "Los Angeles Lakers",
+    "abbr": "LAL"
+  },
+  "1642261": {
+    "team": "Los Angeles Lakers",
+    "abbr": "LAL"
+  },
+  "1642851": {
+    "team": "Charlotte Hornets",
+    "abbr": "CHA"
+  },
+  "1642278": {
+    "team": "New York Knicks",
+    "abbr": "NYK"
+  },
+  "1631132": {
+    "team": "Atlanta Hawks",
+    "abbr": "ATL"
+  },
+  "1629723": {
+    "team": "Utah Jazz",
+    "abbr": "UTA"
+  },
+  "1628436": {
+    "team": "San Antonio Spurs",
+    "abbr": "SAS"
+  },
+  "1630249": {
+    "team": "Portland Trail Blazers",
+    "abbr": "POR"
+  },
+  "1630228": {
+    "team": "Atlanta Hawks",
+    "abbr": "ATL"
+  },
+  "1628398": {
+    "team": "Milwaukee Bucks",
+    "abbr": "MIL"
+  },
+  "1631222": {
+    "team": "Los Angeles Lakers",
+    "abbr": "LAL"
+  },
+  "203897": {
+    "team": "Sacramento Kings",
+    "abbr": "SAC"
+  },
+  "1629111": {
+    "team": "Atlanta Hawks",
+    "abbr": "ATL"
+  },
+  "1642404": {
+    "team": "Detroit Pistons",
+    "abbr": "DET"
+  },
+  "1641796": {
+    "team": "Miami Heat",
+    "abbr": "MIA"
+  },
+  "1630639": {
+    "team": "Toronto Raptors",
+    "abbr": "TOR"
+  },
+  "1627747": {
+    "team": "Detroit Pistons",
+    "abbr": "DET"
+  },
+  "202695": {
+    "team": "LA Clippers",
+    "abbr": "LAC"
+  },
+  "1642502": {
+    "team": "Golden State Warriors",
+    "abbr": "GSW"
+  },
+  "1630604": {
+    "team": "Brooklyn Nets",
+    "abbr": "BKN"
+  },
+  "1641726": {
+    "team": "Dallas Mavericks",
+    "abbr": "DAL"
+  },
+  "1630587": {
+    "team": "Phoenix Suns",
+    "abbr": "PHX"
+  },
+  "1626172": {
+    "team": "New Orleans Pelicans",
+    "abbr": "NOP"
+  },
+  "201572": {
+    "team": "LA Clippers",
+    "abbr": "LAC"
+  },
+  "1631126": {
+    "team": "Portland Trail Blazers",
+    "abbr": "POR"
+  },
+  "201567": {
+    "team": "Utah Jazz",
+    "abbr": "UTA"
+  },
+  "200768": {
+    "team": "Philadelphia 76ers",
+    "abbr": "PHI"
+  },
+  "1642863": {
+    "team": "Phoenix Suns",
+    "abbr": "PHX"
+  },
+  "1630572": {
+    "team": "Toronto Raptors",
+    "abbr": "TOR"
+  },
+  "1629611": {
+    "team": "Brooklyn Nets",
+    "abbr": "BKN"
+  },
+  "1630544": {
+    "team": "Charlotte Hornets",
+    "abbr": "CHA"
+  },
+  "1628374": {
+    "team": "Utah Jazz",
+    "abbr": "UTA"
+  },
+  "1630230": {
+    "team": "Dallas Mavericks",
+    "abbr": "DAL"
+  },
+  "1642918": {
+    "team": "Toronto Raptors",
+    "abbr": "TOR"
+  },
+  "1628997": {
+    "team": "Dallas Mavericks",
+    "abbr": "DAL"
+  },
+  "1631213": {
+    "team": "Philadelphia 76ers",
+    "abbr": "PHI"
+  },
+  "1642942": {
+    "team": "Memphis Grizzlies",
+    "abbr": "MEM"
+  },
+  "1631097": {
+    "team": "LA Clippers",
+    "abbr": "LAC"
+  },
+  "1631255": {
+    "team": "New Orleans Pelicans",
+    "abbr": "NOP"
+  },
+  "1630178": {
+    "team": "Philadelphia 76ers",
+    "abbr": "PHI"
+  },
+  "1643024": {
+    "team": "Los Angeles Lakers",
+    "abbr": "LAL"
+  },
+  "1643016": {
+    "team": "Utah Jazz",
+    "abbr": "UTA"
+  },
+  "1630540": {
+    "team": "New York Knicks",
+    "abbr": "NYK"
+  },
+  "1642272": {
+    "team": "Oklahoma City Thunder",
+    "abbr": "OKC"
+  },
+  "1630644": {
+    "team": "Chicago Bulls",
+    "abbr": "CHI"
+  },
+  "203468": {
+    "team": "Atlanta Hawks",
+    "abbr": "ATL"
+  },
+  "204456": {
+    "team": "Indiana Pacers",
+    "abbr": "IND"
+  },
+  "1641755": {
+    "team": "New York Knicks",
+    "abbr": "NYK"
+  },
+  "1630183": {
+    "team": "Minnesota Timberwolves",
+    "abbr": "MIN"
+  },
+  "203926": {
+    "team": "Sacramento Kings",
+    "abbr": "SAC"
+  },
+  "1631121": {
+    "team": "New Orleans Pelicans",
+    "abbr": "NOP"
+  },
+  "1629162": {
+    "team": "San Antonio Spurs",
+    "abbr": "SAS"
+  },
+  "1642862": {
+    "team": "Charlotte Hornets",
+    "abbr": "CHA"
+  },
+  "1629001": {
+    "team": "Golden State Warriors",
+    "abbr": "GSW"
+  },
+  "1630241": {
+    "team": "Cleveland Cavaliers",
+    "abbr": "CLE"
+  },
+  "203114": {
+    "team": "Dallas Mavericks",
+    "abbr": "DAL"
+  },
+  "1641706": {
+    "team": "Charlotte Hornets",
+    "abbr": "CHA"
+  },
+  "1641801": {
+    "team": "San Antonio Spurs",
+    "abbr": "SAS"
+  },
+  "1641757": {
+    "team": "LA Clippers",
+    "abbr": "LAC"
+  },
+  "1631159": {
+    "team": "Chicago Bulls",
+    "abbr": "CHI"
+  },
+  "1642434": {
+    "team": "Cleveland Cavaliers",
+    "abbr": "CLE"
+  },
+  "1631169": {
+    "team": "Brooklyn Nets",
+    "abbr": "BKN"
+  },
+  "1642274": {
+    "team": "New Orleans Pelicans",
+    "abbr": "NOP"
+  },
+  "1642349": {
+    "team": "Oklahoma City Thunder",
+    "abbr": "OKC"
+  },
+  "1630558": {
+    "team": "Miami Heat",
+    "abbr": "MIA"
+  },
+  "1628378": {
+    "team": "Cleveland Cavaliers",
+    "abbr": "CLE"
+  },
+  "1630596": {
+    "team": "Cleveland Cavaliers",
+    "abbr": "CLE"
+  },
+  "1642367": {
+    "team": "Toronto Raptors",
+    "abbr": "TOR"
+  },
+  "1628370": {
+    "team": "Sacramento Kings",
+    "abbr": "SAC"
+  },
+  "1630541": {
+    "team": "Golden State Warriors",
+    "abbr": "GSW"
+  },
+  "1631111": {
+    "team": "Detroit Pistons",
+    "abbr": "DET"
+  },
+  "1631457": {
+    "team": "Orlando Magic",
+    "abbr": "ORL"
+  },
+  "1629630": {
+    "team": "Memphis Grizzlies",
+    "abbr": "MEM"
+  },
+  "1630530": {
+    "team": "New Orleans Pelicans",
+    "abbr": "NOP"
+  },
+  "1627749": {
+    "team": "New Orleans Pelicans",
+    "abbr": "NOP"
+  },
+  "1627750": {
+    "team": "Denver Nuggets",
+    "abbr": "DEN"
+  },
+  "1631099": {
+    "team": "Sacramento Kings",
+    "abbr": "SAC"
+  },
+  "1631200": {
+    "team": "Portland Trail Blazers",
+    "abbr": "POR"
+  },
+  "1642867": {
+    "team": "Toronto Raptors",
+    "abbr": "TOR"
+  },
+  "1629004": {
+    "team": "Utah Jazz",
+    "abbr": "UTA"
+  },
+  "1631250": {
+    "team": "Milwaukee Bucks",
+    "abbr": "MIL"
+  },
+  "1626204": {
+    "team": "Cleveland Cavaliers",
+    "abbr": "CLE"
+  },
+  "1629614": {
+    "team": "Indiana Pacers",
+    "abbr": "IND"
+  },
+  "1642948": {
+    "team": "Dallas Mavericks",
+    "abbr": "DAL"
+  },
+  "1630174": {
+    "team": "Indiana Pacers",
+    "abbr": "IND"
+  },
+  "1642854": {
+    "team": "Atlanta Hawks",
+    "abbr": "ATL"
+  },
+  "1641803": {
+    "team": "Houston Rockets",
+    "abbr": "HOU"
+  },
+  "1642949": {
+    "team": "LA Clippers",
+    "abbr": "LAC"
+  },
+  "1630192": {
+    "team": "Denver Nuggets",
+    "abbr": "DEN"
+  },
+  "203994": {
+    "team": "Utah Jazz",
+    "abbr": "UTA"
+  },
+  "1626220": {
+    "team": "Phoenix Suns",
+    "abbr": "PHX"
+  },
+  "1642490": {
+    "team": "New Orleans Pelicans",
+    "abbr": "NOP"
+  },
+  "1629006": {
+    "team": "Houston Rockets",
+    "abbr": "HOU"
+  },
+  "1630168": {
+    "team": "Atlanta Hawks",
+    "abbr": "ATL"
+  },
+  "1630171": {
+    "team": "Chicago Bulls",
+    "abbr": "CHI"
+  },
+  "1642950": {
+    "team": "Chicago Bulls",
+    "abbr": "CHI"
+  },
+  "203482": {
+    "team": "San Antonio Spurs",
+    "abbr": "SAS"
+  },
+  "1641807": {
+    "team": "LA Clippers",
+    "abbr": "LAC"
+  },
+  "1626162": {
+    "team": "Philadelphia 76ers",
+    "abbr": "PHI"
+  },
+  "1627780": {
+    "team": "Golden State Warriors",
+    "abbr": "GSW"
+  },
+  "1642877": {
+    "team": "New Orleans Pelicans",
+    "abbr": "NOP"
+  },
+  "1642951": {
+    "team": "LA Clippers",
+    "abbr": "LAC"
+  },
+  "1642869": {
+    "team": "Orlando Magic",
+    "abbr": "ORL"
+  },
+  "1643007": {
+    "team": "Indiana Pacers",
+    "abbr": "IND"
+  },
+  "1641763": {
+    "team": "Minnesota Timberwolves",
+    "abbr": "MIN"
+  },
+  "1629618": {
+    "team": "Denver Nuggets",
+    "abbr": "DEN"
+  },
+  "1630590": {
+    "team": "Memphis Grizzlies",
+    "abbr": "MEM"
+  },
+  "1631342": {
+    "team": "Sacramento Kings",
+    "abbr": "SAC"
+  },
+  "203486": {
+    "team": "San Antonio Spurs",
+    "abbr": "SAS"
+  },
+  "1641764": {
+    "team": "Golden State Warriors",
+    "abbr": "GSW"
+  },
+  "1627751": {
+    "team": "Toronto Raptors",
+    "abbr": "TOR"
+  },
+  "1629673": {
+    "team": "New Orleans Pelicans",
+    "abbr": "NOP"
+  },
+  "1641854": {
+    "team": "Cleveland Cavaliers",
+    "abbr": "CLE"
+  },
+  "1629645": {
+    "team": "Milwaukee Bucks",
+    "abbr": "MIL"
+  },
+  "1629008": {
+    "team": "Brooklyn Nets",
+    "abbr": "BKN"
+  },
+  "1626171": {
+    "team": "Milwaukee Bucks",
+    "abbr": "MIL"
+  },
+  "204001": {
+    "team": "Golden State Warriors",
+    "abbr": "GSW"
+  },
+  "1642366": {
+    "team": "Golden State Warriors",
+    "abbr": "GSW"
+  },
+  "1630695": {
+    "team": "Indiana Pacers",
+    "abbr": "IND"
+  },
+  "1642967": {
+    "team": "Dallas Mavericks",
+    "abbr": "DAL"
+  },
+  "1642962": {
+    "team": "Brooklyn Nets",
+    "abbr": "BKN"
+  },
+  "203939": {
+    "team": "Dallas Mavericks",
+    "abbr": "DAL"
+  },
+  "1626181": {
+    "team": "Miami Heat",
+    "abbr": "MIA"
+  },
+  "1627752": {
+    "team": "Milwaukee Bucks",
+    "abbr": "MIL"
+  },
+  "1630202": {
+    "team": "Boston Celtics",
+    "abbr": "BOS"
+  },
+  "1642878": {
+    "team": "Cleveland Cavaliers",
+    "abbr": "CLE"
+  },
+  "1641765": {
+    "team": "Memphis Grizzlies",
+    "abbr": "MEM"
+  },
+  "1642389": {
+    "team": "Minnesota Timberwolves",
+    "abbr": "MIN"
+  },
+  "1642852": {
+    "team": "New Orleans Pelicans",
+    "abbr": "NOP"
+  },
+  "1629674": {
+    "team": "Boston Celtics",
+    "abbr": "BOS"
+  },
+  "1630193": {
+    "team": "Toronto Raptors",
+    "abbr": "TOR"
+  },
+  "203944": {
+    "team": "Minnesota Timberwolves",
+    "abbr": "MIN"
+  },
+  "1642875": {
+    "team": "Sacramento Kings",
+    "abbr": "SAC"
+  },
+  "1630559": {
+    "team": "Los Angeles Lakers",
+    "abbr": "LAL"
+  },
+  "1630194": {
+    "team": "Detroit Pistons",
+    "abbr": "DET"
+  },
+  "1642882": {
+    "team": "Washington Wizards",
+    "abbr": "WAS"
+  },
+  "1641810": {
+    "team": "Charlotte Hornets",
+    "abbr": "CHA"
+  },
+  "1629675": {
+    "team": "Minnesota Timberwolves",
+    "abbr": "MIN"
+  },
+  "1642954": {
+    "team": "Golden State Warriors",
+    "abbr": "GSW"
+  },
+  "1630208": {
+    "team": "Chicago Bulls",
+    "abbr": "CHI"
+  },
+  "1642859": {
+    "team": "Orlando Magic",
+    "abbr": "ORL"
+  },
+  "1642860": {
+    "team": "Washington Wizards",
+    "abbr": "WAS"
+  },
+  "1642258": {
+    "team": "Atlanta Hawks",
+    "abbr": "ATL"
+  },
+  "1629130": {
+    "team": "Detroit Pistons",
+    "abbr": "DET"
+  },
+  "1629011": {
+    "team": "New York Knicks",
+    "abbr": "NYK"
+  },
+  "1631223": {
+    "team": "Denver Nuggets",
+    "abbr": "DEN"
+  },
+  "1631157": {
+    "team": "Milwaukee Bucks",
+    "abbr": "MIL"
+  },
+  "1641712": {
+    "team": "Memphis Grizzlies",
+    "abbr": "MEM"
+  },
+  "1626156": {
+    "team": "Washington Wizards",
+    "abbr": "WAS"
+  },
+  "1642504": {
+    "team": "Milwaukee Bucks",
+    "abbr": "MIL"
+  },
+  "1627734": {
+    "team": "Sacramento Kings",
+    "abbr": "SAC"
+  },
+  "1642275": {
+    "team": "Charlotte Hornets",
+    "abbr": "CHA"
+  },
+  "1642920": {
+    "team": "LA Clippers",
+    "abbr": "LAC"
+  },
+  "1642362": {
+    "team": "Oklahoma City Thunder",
+    "abbr": "OKC"
+  },
+  "1630611": {
+    "team": "Golden State Warriors",
+    "abbr": "GSW"
+  },
+  "1642879": {
+    "team": "Brooklyn Nets",
+    "abbr": "BKN"
+  },
+  "1642259": {
+    "team": "Washington Wizards",
+    "abbr": "WAS"
+  },
+  "1630846": {
+    "team": "Cleveland Cavaliers",
+    "abbr": "CLE"
+  },
+  "1631204": {
+    "team": "Detroit Pistons",
+    "abbr": "DET"
+  },
+  "1631248": {
+    "team": "Boston Celtics",
+    "abbr": "BOS"
+  },
+  "203471": {
+    "team": "Cleveland Cavaliers",
+    "abbr": "CLE"
+  },
+  "1630578": {
+    "team": "Houston Rockets",
+    "abbr": "HOU"
+  },
+  "1641729": {
+    "team": "Utah Jazz",
+    "abbr": "UTA"
+  },
+  "1629012": {
+    "team": "Chicago Bulls",
+    "abbr": "CHI"
+  },
+  "1629013": {
+    "team": "New York Knicks",
+    "abbr": "NYK"
+  },
+  "1630545": {
+    "team": "Minnesota Timberwolves",
+    "abbr": "MIN"
+  },
+  "1630549": {
+    "team": "Brooklyn Nets",
+    "abbr": "BKN"
+  },
+  "1631101": {
+    "team": "Portland Trail Blazers",
+    "abbr": "POR"
+  },
+  "1642347": {
+    "team": "Toronto Raptors",
+    "abbr": "TOR"
+  },
+  "1641767": {
+    "team": "Indiana Pacers",
+    "abbr": "IND"
+  },
+  "1642263": {
+    "team": "Houston Rockets",
+    "abbr": "HOU"
+  },
+  "1642917": {
+    "team": "Boston Celtics",
+    "abbr": "BOS"
+  },
+  "1627783": {
+    "team": "Indiana Pacers",
+    "abbr": "IND"
+  },
+  "1629014": {
+    "team": "Chicago Bulls",
+    "abbr": "CHI"
+  },
+  "1642354": {
+    "team": "Denver Nuggets",
+    "abbr": "DEN"
+  },
+  "1630579": {
+    "team": "Milwaukee Bucks",
+    "abbr": "MIL"
+  },
+  "1641771": {
+    "team": "Indiana Pacers",
+    "abbr": "IND"
+  },
+  "1642914": {
+    "team": "Memphis Grizzlies",
+    "abbr": "MEM"
+  },
+  "203935": {
+    "team": "Los Angeles Lakers",
+    "abbr": "LAL"
+  },
+  "1630696": {
+    "team": "Miami Heat",
+    "abbr": "MIA"
+  },
+  "1630188": {
+    "team": "Chicago Bulls",
+    "abbr": "CHI"
+  },
+  "1641869": {
+    "team": "Brooklyn Nets",
+    "abbr": "BKN"
+  },
+  "1642449": {
+    "team": "Detroit Pistons",
+    "abbr": "DET"
+  },
+  "1641890": {
+    "team": "Dallas Mavericks",
+    "abbr": "DAL"
+  },
+  "1631095": {
+    "team": "Houston Rockets",
+    "abbr": "HOU"
+  },
+  "1641733": {
+    "team": "Los Angeles Lakers",
+    "abbr": "LAL"
+  },
+  "1631110": {
+    "team": "New York Knicks",
+    "abbr": "NYK"
+  },
+  "1642285": {
+    "team": "Memphis Grizzlies",
+    "abbr": "MEM"
+  },
+  "1630311": {
+    "team": "Golden State Warriors",
+    "abbr": "GSW"
+  },
+  "1641815": {
+    "team": "Sacramento Kings",
+    "abbr": "SAC"
+  },
+  "1630191": {
+    "team": "Detroit Pistons",
+    "abbr": "DET"
+  },
+  "1631124": {
+    "team": "Denver Nuggets",
+    "abbr": "DEN"
+  },
+  "1629622": {
+    "team": "Cleveland Cavaliers",
+    "abbr": "CLE"
+  },
+  "1630591": {
+    "team": "Orlando Magic",
+    "abbr": "ORL"
+  },
+  "1630256": {
+    "team": "Houston Rockets",
+    "abbr": "HOU"
+  },
+  "1628369": {
+    "team": "Boston Celtics",
+    "abbr": "BOS"
+  },
+  "202066": {
+    "team": "Toronto Raptors",
+    "abbr": "TOR"
+  },
+  "1631207": {
+    "team": "Philadelphia 76ers",
+    "abbr": "PHI"
+  },
+  "1642876": {
+    "team": "Los Angeles Lakers",
+    "abbr": "LAL"
+  },
+  "1641708": {
+    "team": "Houston Rockets",
+    "abbr": "HOU"
+  },
+  "1641709": {
+    "team": "Detroit Pistons",
+    "abbr": "DET"
+  },
+  "1630679": {
+    "team": "Indiana Pacers",
+    "abbr": "IND"
+  },
+  "202691": {
+    "team": "Dallas Mavericks",
+    "abbr": "DAL"
+  },
+  "1629680": {
+    "team": "Portland Trail Blazers",
+    "abbr": "POR"
+  },
+  "1630214": {
+    "team": "Charlotte Hornets",
+    "abbr": "CHA"
+  },
+  "1631166": {
+    "team": "Los Angeles Lakers",
+    "abbr": "LAL"
+  },
+  "1641772": {
+    "team": "Cleveland Cavaliers",
+    "abbr": "CLE"
+  },
+  "1642910": {
+    "team": "Boston Celtics",
+    "abbr": "BOS"
+  },
+  "1642260": {
+    "team": "Oklahoma City Thunder",
+    "abbr": "OKC"
+  },
+  "1630167": {
+    "team": "Indiana Pacers",
+    "abbr": "IND"
+  },
+  "1626157": {
+    "team": "New York Knicks",
+    "abbr": "NYK"
+  },
+  "1642849": {
+    "team": "Brooklyn Nets",
+    "abbr": "BKN"
+  },
+  "1629018": {
+    "team": "Milwaukee Bucks",
+    "abbr": "MIL"
+  },
+  "1631131": {
+    "team": "Utah Jazz",
+    "abbr": "UTA"
+  },
+  "1626167": {
+    "team": "Milwaukee Bucks",
+    "abbr": "MIL"
+  },
+  "1642281": {
+    "team": "Cleveland Cavaliers",
+    "abbr": "CLE"
+  },
+  "202685": {
+    "team": "Denver Nuggets",
+    "abbr": "DEN"
+  },
+  "1629020": {
+    "team": "Los Angeles Lakers",
+    "abbr": "LAL"
+  },
+  "1630170": {
+    "team": "San Antonio Spurs",
+    "abbr": "SAS"
+  },
+  "1629216": {
+    "team": "Atlanta Hawks",
+    "abbr": "ATL"
+  },
+  "1641774": {
+    "team": "Washington Wizards",
+    "abbr": "WAS"
+  },
+  "202696": {
+    "team": "Boston Celtics",
+    "abbr": "BOS"
+  },
+  "1629731": {
+    "team": "Cleveland Cavaliers",
+    "abbr": "CLE"
+  },
+  "1630532": {
+    "team": "Orlando Magic",
+    "abbr": "ORL"
+  },
+  "1629021": {
+    "team": "Orlando Magic",
+    "abbr": "ORL"
+  },
+  "1631133": {
+    "team": "Philadelphia 76ers",
+    "abbr": "PHI"
+  },
+  "1641716": {
+    "team": "Indiana Pacers",
+    "abbr": "IND"
+  },
+  "1641717": {
+    "team": "Oklahoma City Thunder",
+    "abbr": "OKC"
+  },
+  "1630811": {
+    "team": "Atlanta Hawks",
+    "abbr": "ATL"
+  },
+  "1641775": {
+    "team": "Boston Celtics",
+    "abbr": "BOS"
+  },
+  "1642266": {
+    "team": "Toronto Raptors",
+    "abbr": "TOR"
+  },
+  "1642276": {
+    "team": "Miami Heat",
+    "abbr": "MIA"
+  },
+  "1629023": {
+    "team": "Dallas Mavericks",
+    "abbr": "DAL"
+  },
+  "1631102": {
+    "team": "LA Clippers",
+    "abbr": "LAC"
+  },
+  "1630322": {
+    "team": "San Antonio Spurs",
+    "abbr": "SAS"
+  },
+  "1630570": {
+    "team": "Philadelphia 76ers",
+    "abbr": "PHI"
+  },
+  "1642364": {
+    "team": "Washington Wizards",
+    "abbr": "WAS"
+  },
+  "1631212": {
+    "team": "Denver Nuggets",
+    "abbr": "DEN"
+  },
+  "1642377": {
+    "team": "Memphis Grizzlies",
+    "abbr": "MEM"
+  },
+  "1641705": {
+    "team": "San Antonio Spurs",
+    "abbr": "SAS"
+  },
+  "1631104": {
+    "team": "Portland Trail Blazers",
+    "abbr": "POR"
+  },
+  "201566": {
+    "team": "Sacramento Kings",
+    "abbr": "SAC"
+  },
+  "1629632": {
+    "team": "Charlotte Hornets",
+    "abbr": "CHA"
+  },
+  "1628401": {
+    "team": "Boston Celtics",
+    "abbr": "BOS"
+  },
+  "1641715": {
+    "team": "Washington Wizards",
+    "abbr": "WAS"
+  },
+  "1630598": {
+    "team": "Oklahoma City Thunder",
+    "abbr": "OKC"
+  },
+  "203952": {
+    "team": "Miami Heat",
+    "abbr": "MIA"
+  },
+  "1642873": {
+    "team": "Boston Celtics",
+    "abbr": "BOS"
+  },
+  "1630314": {
+    "team": "Dallas Mavericks",
+    "abbr": "DAL"
+  },
+  "1642262": {
+    "team": "Utah Jazz",
+    "abbr": "UTA"
+  },
+  "1629684": {
+    "team": "Charlotte Hornets",
+    "abbr": "CHA"
+  },
+  "1631114": {
+    "team": "Oklahoma City Thunder",
+    "abbr": "OKC"
+  },
+  "1631119": {
+    "team": "Oklahoma City Thunder",
+    "abbr": "OKC"
+  },
+  "1629026": {
+    "team": "Oklahoma City Thunder",
+    "abbr": "OKC"
+  },
+  "1631109": {
+    "team": "Phoenix Suns",
+    "abbr": "PHX"
+  },
+  "1630172": {
+    "team": "Chicago Bulls",
+    "abbr": "CHI"
+  },
+  "1630533": {
+    "team": "Brooklyn Nets",
+    "abbr": "BKN"
+  },
+  "1629057": {
+    "team": "Portland Trail Blazers",
+    "abbr": "POR"
+  },
+  "1629627": {
+    "team": "New Orleans Pelicans",
+    "abbr": "NOP"
+  },
+  "1630592": {
+    "team": "Brooklyn Nets",
+    "abbr": "BKN"
+  },
+  "1642874": {
+    "team": "Brooklyn Nets",
+    "abbr": "BKN"
+  },
+  "1627824": {
+    "team": "Chicago Bulls",
+    "abbr": "CHI"
+  },
+  "1642905": {
+    "team": "Portland Trail Blazers",
+    "abbr": "POR"
+  },
+  "1642443": {
+    "team": "Miami Heat",
+    "abbr": "MIA"
+  },
+  "1629027": {
+    "team": "Washington Wizards",
+    "abbr": "WAS"
+  },
+  "1642959": {
+    "team": "Portland Trail Blazers",
+    "abbr": "POR"
+  },
+  "1642911": {
+    "team": "Minnesota Timberwolves",
+    "abbr": "MIN"
+  },
+  "1627826": {
+    "team": "Indiana Pacers",
+    "abbr": "IND"
+  },
+  "1641783": {
+    "team": "Orlando Magic",
+    "abbr": "ORL"
+  },
+  "1628881": {
+    "team": "Indiana Fever",
+    "abbr": "IND"
+  },
+  "1641648": {
+    "team": "Indiana Fever",
+    "abbr": "IND"
+  },
+  "1642286": {
+    "team": "Indiana Fever",
+    "abbr": "IND"
+  },
+  "1629482": {
+    "team": "Indiana Fever",
+    "abbr": "IND"
+  },
+  "203024": {
+    "team": "Indiana Fever",
+    "abbr": "IND"
+  },
+  "1642788": {
+    "team": "Indiana Fever",
+    "abbr": "IND"
+  },
+  "1630112": {
+    "team": "Indiana Fever",
+    "abbr": "IND"
+  },
+  "1628899": {
+    "team": "Indiana Fever",
+    "abbr": "IND"
+  },
+  "1631086": {
+    "team": "Indiana Fever",
+    "abbr": "IND"
+  },
+  "1643433": {
+    "team": "Indiana Fever",
+    "abbr": "IND"
+  },
+  "1628909": {
+    "team": "Indiana Fever",
+    "abbr": "IND"
+  },
+  "1642815": {
+    "team": "Indiana Fever",
+    "abbr": "IND"
+  },
+  "1643453": {
+    "team": "Indiana Fever",
+    "abbr": "IND"
+  },
+  "1628932": {
+    "team": "Las Vegas Aces",
+    "abbr": "LVA"
+  }
+}

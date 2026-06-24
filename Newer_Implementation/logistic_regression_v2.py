@@ -12,7 +12,7 @@ def main():
         print("Invalid number entered for market line.")
         return
 
-    csv_path = f"csv_exports/{player_input}.csv"
+    csv_path = f"nba_csv_exports/{player_input}.csv"
     if not os.path.exists(csv_path):
         print(f"CSV file not found for {player_input}. Expected at: {csv_path}")
         return

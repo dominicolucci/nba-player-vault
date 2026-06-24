@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NBA Player Vault — an end-to-end analytics data platform</title>
+<meta name="description" content="An end-to-end analytics platform built by one engineer: a rate-limited ELT pipeline, a DuckDB warehouse, a shared query layer, a REST API and an interactive UI — 540+ NBA & WNBA players.">
+<!-- social sharing (basketball audience = organic reach) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="NBA Player Vault — an end-to-end analytics platform">
+<meta property="og:description" content="540+ NBA & WNBA players, full career game logs, head-to-head comparisons, leaderboards, and an 82-0 draft game — built on a real ELT pipeline + DuckDB warehouse.">
+<meta property="og:url" content="REPLACE_SITE_URL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NBA Player Vault — an end-to-end analytics platform">
+<meta name="twitter:description" content="540+ NBA & WNBA players on a real data pipeline. Compare stars, climb leaderboards, draft a perfect 82-0 lineup.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <a class="brand" href="#top">NBA&nbsp;PLAYER&nbsp;VAULT</a>
+  <nav class="navlinks">
+    <a href="#architecture">Architecture</a>
+    <a href="#engineering">Engineering</a>
+    <a href="#stack">Stack</a>
+    <a href="technical.html">Deep&#8209;dive</a>
+    <a class="ghost" href="REPLACE_GITHUB_URL" target="_blank" rel="noopener">GitHub&nbsp;↗</a>
+    <a class="cta" href="REPLACE_LIVE_APP_URL" target="_blank" rel="noopener">Live&nbsp;app&nbsp;↗</a>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">End&#8209;to&#8209;end data platform · built &amp; shipped by one engineer</div>
+    <h1>From raw API to live dashboard —<br><span class="accent">every layer, one codebase.</span></h1>
+    <p class="lede">An interactive analytics platform that ingests every game of a player's
+      career from the NBA's <strong>official stats API</strong>, warehouses it, and serves it
+      through player profiles, head&#8209;to&#8209;head comparisons, leaderboards, and a draft game —
+      <strong>540+ players across the NBA &amp; WNBA</strong>.</p>
+    <div class="hero-cta">
+      <a class="btn primary" href="REPLACE_LIVE_APP_URL" target="_blank" rel="noopener">Explore the vault →</a>
+      <a class="btn ghost" href="REPLACE_GITHUB_URL" target="_blank" rel="noopener">View the code</a>
+    </div>
+    <div class="hero-meta">Official <code>stats.nba.com</code> data · shooting %s validated against Basketball&#8209;Reference</div>
+  </div>
+
+  <!-- real-data preview card (numbers pulled from the live warehouse) -->
+  <aside class="hero-card" aria-label="Sample player card with real data">
+    <div class="hc-head">
+      <div class="hc-avatar" style="background-image:url('https://cdn.nba.com/headshots/nba/latest/1040x760/1629029.png')"></div>
+      <div>
+        <div class="hc-name">Luka Dončić</div>
+        <div class="hc-sub">Career · 514 games · NBA scoring leader in the vault</div>
+      </div>
+    </div>
+    <div class="hc-stats">
+      <div><span class="n">29.2</span><span class="l">PPG</span></div>
+      <div><span class="n">8.5</span><span class="l">RPG</span></div>
+      <div><span class="n">8.2</span><span class="l">APG</span></div>
+      <div><span class="n">35.2%</span><span class="l">3PT</span></div>
+    </div>
+    <svg class="hc-spark" viewBox="0 0 320 70" preserveAspectRatio="none" aria-hidden="true">
+      <polyline points="0,52 53,46 106,46 160,40 213,22 266,16 320,9" fill="none"
+        stroke="#f5a623" stroke-width="2.5"/>
+      <polygon points="0,52 53,46 106,46 160,40 213,22 266,16 320,9 320,70 0,70"
+        fill="url(#sg)" opacity="0.18"/>
+      <defs><linearGradient id="sg" x1="0" x2="0" y1="0" y2="1">
+        <stop offset="0" stop-color="#f5a623"/><stop offset="1" stop-color="#f5a623" stop-opacity="0"/>
+      </linearGradient></defs>
+    </svg>
+    <div class="hc-foot">Career scoring trajectory · season&#8209;over&#8209;season</div>
+  </aside>
+</section>
+
+<!-- ============ SCOPE METRICS ============ -->
+<section class="band metrics" aria-label="Scale of the platform">
+  <div class="metric"><div class="m-num">540<span>+</span></div><div class="m-lbl">Players</div></div>
+  <div class="metric"><div class="m-num">32</div><div class="m-lbl">Teams · 30 NBA + WNBA</div></div>
+  <div class="metric"><div class="m-num">163K<span>+</span></div><div class="m-lbl">Game logs</div></div>
+  <div class="metric"><div class="m-num">2</div><div class="m-lbl">Frontends · REST API + UI</div></div>
+</section>
+
+<!-- ============ ARCHITECTURE ============ -->
+<section class="section" id="architecture">
+  <div class="section-head">
+    <span class="kicker">The system</span>
+    <h2>A real pipeline, not a single script</h2>
+    <p>A one&#8209;directional, medallion&#8209;style data architecture — raw landing layer, curated
+      warehouse, one shared access layer, two frontends. Each stage does one job.</p>
+  </div>
+
+  <div class="pipeline">
+    <div class="pl-band"><span>SOURCE</span></div>
+    <div class="pl-node src">
+      <div class="pl-ico">🌐</div><div class="pl-t">nba_api</div>
+      <div class="pl-d">Official stats.nba.com endpoints</div>
+    </div>
+    <div class="pl-arrow" aria-hidden="true">→</div>
+
+    <div class="pl-band"><span>RAW</span></div>
+    <div class="pl-node">
+      <div class="pl-ico">⚙️</div><div class="pl-t">Ingestion daemon</div>
+      <div class="pl-d">Rate&#8209;limited · retry/backoff · resumable</div>
+    </div>
+    <div class="pl-arrow" aria-hidden="true">→</div>
+    <div class="pl-node">
+      <div class="pl-ico">🗄️</div><div class="pl-t">CSV landing layer</div>
+      <div class="pl-d">One canonical file per player</div>
+    </div>
+    <div class="pl-arrow" aria-hidden="true">→</div>
+
+    <div class="pl-band"><span>CURATED</span></div>
+    <div class="pl-node warehouse">
+      <div class="pl-ico">🦆</div><div class="pl-t">DuckDB warehouse</div>
+      <div class="pl-d">games · players · season_averages view</div>
+    </div>
+    <div class="pl-arrow" aria-hidden="true">→</div>
+    <div class="pl-node access">
+      <div class="pl-ico">🔁</div><div class="pl-t">Shared access layer</div>
+      <div class="pl-d">data.py — one source of query truth</div>
+    </div>
+    <div class="pl-arrow" aria-hidden="true">→</div>
+
+    <div class="pl-band"><span>SERVE</span></div>
+    <div class="pl-node serve">
+      <div class="pl-ico">⚡</div><div class="pl-t">FastAPI</div>
+      <div class="pl-d">REST + auto OpenAPI docs</div>
+    </div>
+    <div class="pl-node serve">
+      <div class="pl-ico">📊</div><div class="pl-t">Streamlit + Plotly</div>
+      <div class="pl-d">Interactive UI</div>
+    </div>
+  </div>
+  <p class="pl-caption">The same <code>data.py</code> layer feeds both frontends, so query logic
+    is never duplicated or allowed to drift between the API and the UI.</p>
+</section>
+
+<!-- ============ PRODUCT DEMO ============ -->
+<section class="section" id="product">
+  <div class="section-head">
+    <span class="kicker">The product</span>
+    <h2>What you can actually do with it</h2>
+  </div>
+  <div class="cards-4">
+    <a class="pcard" href="REPLACE_LIVE_APP_URL" target="_blank" rel="noopener">
+      <div class="pc-ico">📈</div>
+      <h3>Player profiles</h3>
+      <p>Any player's full career — per&#8209;season splits, game logs, and an adaptive trajectory
+        chart that switches to a rolling average for rookies.</p>
+      <span class="pc-cta">Try it →</span>
+    </a>
+    <a class="pcard" href="REPLACE_LIVE_APP_URL" target="_blank" rel="noopener">
+      <div class="pc-ico">⚖️</div>
+      <h3>Head&#8209;to&#8209;head</h3>
+      <p>Put any two stars side by side and see who takes each category — e.g. Dončić's
+        <strong>29.2</strong> vs Embiid's <strong>27.6</strong> career PPG.</p>
+      <span class="pc-cta">Try it →</span>
+    </a>
+    <a class="pcard" href="REPLACE_LIVE_APP_URL" target="_blank" rel="noopener">
+      <div class="pc-ico">🏆</div>
+      <h3>Leaderboards</h3>
+      <p>Single&#8209;season and all&#8209;time rankings with correctly volume&#8209;weighted shooting
+        percentages.</p>
+      <span class="pc-cta">Try it →</span>
+    </a>
+    <a class="pcard" href="REPLACE_LIVE_APP_URL" target="_blank" rel="noopener">
+      <div class="pc-ico">🎮</div>
+      <h3>The 82&#8209;0 game</h3>
+      <p>Draft a starting five; each player's real production maps to a real NBA team's
+        win&#8209;loss record as you chase a perfect, undefeated season.</p>
+      <span class="pc-cta">Play →</span>
+    </a>
+  </div>
+
+  <!-- real leaderboard snippet for credibility -->
+  <div class="lb">
+    <div class="lb-title">Live from the warehouse · career points per game</div>
+    <ol class="lb-list">
+      <li><span class="lb-rank">1</span><span class="lb-name">Luka Dončić</span><span class="lb-val">29.2</span></li>
+      <li><span class="lb-rank">2</span><span class="lb-name">Joel Embiid</span><span class="lb-val">27.6</span></li>
+      <li><span class="lb-rank">3</span><span class="lb-name">Kevin Durant</span><span class="lb-val">27.1</span></li>
+      <li><span class="lb-rank">4</span><span class="lb-name">LeBron James</span><span class="lb-val">26.8</span></li>
+      <li><span class="lb-rank">5</span><span class="lb-name">Shai Gilgeous&#8209;Alexander</span><span class="lb-val">25.3</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ LIVE DEMO EMBED (Part 4) ============ -->
+<section class="section" id="demo">
+  <div class="section-head">
+    <span class="kicker">Live demo</span>
+    <h2>Not a screenshot — the real app, right here</h2>
+    <p>Interactive, with real data on 540+ players. Look up anyone, compare two stars, or draft
+      a lineup without leaving the page.</p>
+  </div>
+  <div class="embed-frame">
+    <iframe src="REPLACE_LIVE_APP_EMBED_URL" title="NBA Player Vault — live Streamlit app"
+      loading="lazy" allow="fullscreen"></iframe>
+  </div>
+  <div class="embed-note">
+    <a class="btn primary" href="REPLACE_LIVE_APP_URL" target="_blank" rel="noopener">Open the full app ↗</a>
+  </div>
+</section>
+
+<!-- ============ ENGINEERING STORIES ============ -->
+<section class="section" id="engineering">
+  <div class="section-head">
+    <span class="kicker">The hard parts</span>
+    <h2>Real data. Real bugs. Real fixes.</h2>
+    <p>The difference between a toy project and a platform is what breaks — and whether you
+      caught it. Three problems I hit and solved:</p>
+  </div>
+  <div class="cards-3">
+    <article class="ecard">
+      <div class="e-tag">Data quality</div>
+      <h3>A free&#8209;throw % read 80.8% — the truth was 90.8%</h3>
+      <p class="e-cause"><strong>Cause:</strong> percentages were computed as the average of
+        per&#8209;game percentages, which ignores attempt volume.</p>
+      <p class="e-fix"><strong>Fix:</strong> re&#8209;derive every % as total makes ÷ total
+        attempts, across the warehouse view, career, and leaderboards — now matches
+        Basketball&#8209;Reference exactly.</p>
+    </article>
+    <article class="ecard">
+      <div class="e-tag">Dirty data</div>
+      <h3>Names break on accents, hyphens, and missing rookies</h3>
+      <p class="e-cause"><strong>Cause:</strong> "Jokić", "Gilgeous&#8209;Alexander", and players
+        absent from the bundled static list all failed naive matching.</p>
+      <p class="e-fix"><strong>Fix:</strong> a resolver using Unicode NFKD accent&#8209;folding,
+        hyphen normalization, and a static&#8209;list → live&#8209;API fallback.</p>
+    </article>
+    <article class="ecard">
+      <div class="e-tag">Resilience</div>
+      <h3>My internet dropped mid&#8209;run. Zero data lost.</h3>
+      <p class="e-cause"><strong>Cause:</strong> a real network outage during a large ingest of
+        hundreds of players.</p>
+      <p class="e-fix"><strong>Fix:</strong> daemon retry/backoff rode through it, an
+        orchestrator retry pass re&#8209;pulled the one casualty, and the load is fully
+        pausable/resumable — it dedupes and pulls only what's missing.</p>
+    </article>
+  </div>
+  <a class="readmore" href="technical.html">Read the full technical deep&#8209;dive →</a>
+</section>
+
+<!-- ============ STACK & TRADEOFFS ============ -->
+<section class="section" id="stack">
+  <div class="section-head">
+    <span class="kicker">The toolbox</span>
+    <h2>Every choice has a tradeoff I can defend</h2>
+    <p>Not a logo parade — the reasoning behind each tool, including where it breaks down.</p>
+  </div>
+  <div class="stack">
+    <div class="srow"><div class="s-tool">DuckDB</div><div class="s-why">Embedded, zero&#8209;ops, columnar — millisecond analytical scans, reads CSV/Parquet natively.</div><div class="s-trade">Single&#8209;writer; I'd move to Postgres for concurrent multi&#8209;user writes.</div></div>
+    <div class="srow"><div class="s-tool">nba_api</div><div class="s-why">The official stats.nba.com endpoints — authoritative and structured.</div><div class="s-trade">Strict rate limits; handled with a global gate, backoff, and checkpointing.</div></div>
+    <div class="srow"><div class="s-tool">FastAPI</div><div class="s-why">Typed REST with auto&#8209;generated OpenAPI docs, near&#8209;zero boilerplate.</div><div class="s-trade">Read&#8209;only here; the heavy lifting lives in the shared data layer.</div></div>
+    <div class="srow"><div class="s-tool">Streamlit + Plotly</div><div class="s-why">Ships an interactive, charted data UI fast as a solo developer.</div><div class="s-trade">Less layout control than React — a planned future frontend.</div></div>
+  </div>
+</section>
+
+<!-- ============ ROADMAP ============ -->
+<section class="section" id="roadmap">
+  <div class="section-head">
+    <span class="kicker">What's next</span>
+    <h2>Built to evolve, not to sit finished</h2>
+  </div>
+  <ul class="roadmap">
+    <li><strong>ML trajectory projection</strong> — forecast career arcs from the season data.</li>
+    <li><strong>Chat with the Vault</strong> — an LLM text&#8209;to&#8209;SQL layer over the warehouse.</li>
+    <li><strong>Player embeddings</strong> — similarity &amp; clustering of playing styles.</li>
+    <li><strong>All&#8209;time greats</strong> — historical players (Magic, Bird) with full box scores.</li>
+    <li><strong>Parquet + incremental upserts</strong> — retire full rebuilds.</li>
+    <li><strong>React frontend</strong> — a production&#8209;grade UI on the same REST API.</li>
+  </ul>
+</section>
+
+<!-- ============ FOOTER CTA ============ -->
+<footer class="footer">
+  <h2>See it for yourself</h2>
+  <div class="foot-cta">
+    <a class="btn primary big" href="REPLACE_LIVE_APP_URL" target="_blank" rel="noopener">Explore the live app →</a>
+    <a class="btn ghost big" href="REPLACE_GITHUB_URL" target="_blank" rel="noopener">View the repository</a>
+  </div>
+  <div class="foot-links">
+    <a href="REPLACE_LINKEDIN_URL" target="_blank" rel="noopener">LinkedIn</a> ·
+    <a href="REPLACE_GITHUB_URL" target="_blank" rel="noopener">GitHub</a> ·
+    <a href="technical.html">Technical deep&#8209;dive</a>
+  </div>
+  <div class="foot-fine">NBA Player Vault · an end&#8209;to&#8209;end analytics data platform · data from stats.nba.com</div>
+</footer>
+
+</body>
+</html>

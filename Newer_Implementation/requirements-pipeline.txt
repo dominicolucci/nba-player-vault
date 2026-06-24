@@ -1,0 +1,6 @@
+# Dependencies for the data pipeline + REST API (NOT needed to serve the app).
+# Install with:  pip install -r requirements.txt -r requirements-pipeline.txt
+nba_api==1.11.4       # official stats.nba.com client (ingestion)
+requests==2.34.2      # transport for nba_api
+fastapi==0.116.1      # REST API over the warehouse (api.py)
+uvicorn==0.35.0       # ASGI server for FastAPI

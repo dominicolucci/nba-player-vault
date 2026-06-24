@@ -165,7 +165,7 @@ def main():
         print("Unsupported model type.")
         return
 
-    csv_path = f"csv_exports/{player}.csv"
+    csv_path = f"nba_csv_exports/{player}.csv"
     if not os.path.exists(csv_path):
         print(f"CSV not found at: {csv_path}")
         return

@@ -18,7 +18,7 @@ def log_model_prediction():
     stat = input("Stat (PTS, AST, etc.): ").strip().upper()
     line = float(input("Market line (e.g., 17.5): "))
 
-    csv_path = f"csv_exports/{player}.csv"
+    csv_path = f"nba_csv_exports/{player}.csv"
     if not os.path.exists(csv_path):
         print(f"[!] Missing CSV for {player}")
         return

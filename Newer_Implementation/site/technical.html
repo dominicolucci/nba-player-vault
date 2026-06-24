@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Technical deep-dive — NBA Player Vault</title>
+<meta name="description" content="How NBA Player Vault is built: a medallion ELT pipeline, a DuckDB warehouse, a shared query layer, and the real data-quality and resilience problems solved along the way.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+
+<!-- NAV -->
+<header class="nav">
+  <a class="brand" href="index.html">NBA&nbsp;PLAYER&nbsp;VAULT</a>
+  <nav class="navlinks">
+    <a href="index.html#architecture">Architecture</a>
+    <a href="index.html#engineering">Engineering</a>
+    <a href="index.html#stack">Stack</a>
+    <a class="ghost" href="REPLACE_GITHUB_URL" target="_blank" rel="noopener">GitHub&nbsp;↗</a>
+    <a class="cta" href="REPLACE_LIVE_APP_URL" target="_blank" rel="noopener">Live&nbsp;app&nbsp;↗</a>
+  </nav>
+</header>
+
+<div class="doc-hero">
+  <span class="kicker">Technical deep-dive</span>
+  <h1>How the Vault is built</h1>
+  <p>A one-person, end-to-end analytics platform — from a rate-limited ingest of the NBA's
+    official stats API to an interactive UI. This is the architecture, the data-quality work,
+    and the design tradeoffs, written for an engineer evaluating the project.</p>
+</div>
+
+<div class="doc-wrap">
+  <!-- TOC -->
+  <aside class="toc">
+    <div class="toc-title">Contents</div>
+    <a href="#overview">Overview</a>
+    <a href="#architecture">Architecture</a>
+    <a href="#datamodel">Data model</a>
+    <a href="#ingestion">Ingestion &amp; resilience</a>
+    <a href="#quality">Data quality</a>
+    <a href="#decisions">Design decisions</a>
+    <a href="#testing">Testing</a>
+    <a href="#scale">Scale</a>
+    <a href="#running">Running it</a>
+    <a href="#roadmap">Roadmap</a>
+  </aside>
+
+  <!-- ARTICLE -->
+  <article class="doc">
+    <h2 id="overview">Overview</h2>
+    <p>NBA Player Vault ingests every game of a player's career from <code>stats.nba.com</code>,
+      warehouses it, and serves it through player profiles, head-to-head comparisons, leaderboards,
+      and a draft game. It covers all 30 NBA teams plus the WNBA — on the order of <strong>540
+      players</strong> and <strong>163,000+ game-level records</strong>.</p>
+    <p>The point of the project is to demonstrate a full data platform built and shipped by one
+      person: ingestion, warehousing, a shared access layer, a REST API, and a UI — with the
+      real data-quality and reliability problems that come with live sports data.</p>
+
+    <h2 id="architecture">Architecture</h2>
+    <p>The system is a one-directional, <strong>medallion-style</strong> pipeline. Each stage has a
+      single responsibility, and nothing downstream reaches around the layer below it.</p>
+    <pre><code>stats.nba.com (nba_api)
+   │   rate-limited, resumable pull
+   ▼
+nba_daemon.py ──► per-player canonical CSVs        ← RAW landing layer
+   ▼
+warehouse.py ───► player_vault.duckdb              ← CURATED warehouse
+   ▼              (games · players · season_averages view)
+data.py  ← single shared query layer (read-only)
+   ├──► api.py        (FastAPI — REST + OpenAPI docs)
+   └──► vault_app.py  (Streamlit + Plotly UI)</code></pre>
+    <p>The key decision is the <strong>shared access layer</strong> (<code>data.py</code>): both the
+      API and the UI import the same query functions, so SQL logic is never duplicated or allowed to
+      drift between frontends. Two small enrichment scripts add the dimensions the box-score endpoints
+      don't carry — position and current team — cached as JSON sidecars and loaded read-only, so they
+      never require a warehouse rebuild.</p>
+
+    <h2 id="datamodel">Data model</h2>
+    <p>The warehouse is intentionally small and denormalized for analytics:</p>
+    <ul>
+      <li><strong>games</strong> — one row per player-game, canonical schema (points, rebounds,
+        assists, steals, blocks, turnovers, makes/attempts, computed Game Score, opponent, result,
+        season, league).</li>
+      <li><strong>players</strong> — one row per player (id, headshot URL, league, first/last season,
+        games played).</li>
+      <li><strong>season_averages</strong> — a view aggregating games to per-season lines, with
+        shooting percentages re-derived from totals (see Data quality).</li>
+    </ul>
+
+    <h2 id="ingestion">Ingestion &amp; resilience</h2>
+    <p>The ingestion daemon is built to run unattended against a rate-limited, sometimes-flaky API
+      without getting blocked or losing work:</p>
+    <ul>
+      <li><strong>Global rate gate</strong> — a throttle enforces ~2–3s between calls regardless of
+        which code path triggers them.</li>
+      <li><strong>Retry / backoff / cooldown</strong> — transient failures retry with growing delays;
+        a run of consecutive failures triggers a longer cooldown rather than hammering the API.</li>
+      <li><strong>Idempotent + resumable</strong> — each player is an independent CSV, so a run
+        dedupes against what's on disk and pulls only what's missing. A load can be paused and
+        resumed with no double-work.</li>
+    </ul>
+    <div class="callout">
+      <span class="c-tag">War story · resilience</span>
+      <p>During a load of ~200 players, my <strong>internet physically dropped mid-run</strong>.
+        Nothing was lost: the daemon's retry/backoff rode through the gap, an orchestrator-level retry
+        pass re-pulled the single player that failed outright, and the resumable design let the run
+        continue exactly where it left off when the connection returned.</p>
+    </div>
+    <p>An orchestrator (<code>add_teams.py</code>) chains the whole thing end-to-end for a set of
+      teams — discover roster → dedupe → pull new players → retry failures → rebuild warehouse →
+      enrich positions &amp; teams — in one self-contained, network-only run.</p>
+
+    <h2 id="quality">Data quality</h2>
+    <p>Live sports data is messy in specific, instructive ways. Two of the most useful bugs:</p>
+    <div class="callout">
+      <span class="c-tag">Bug · statistical correctness</span>
+      <p>Shooting percentages were initially computed as the <strong>average of per-game
+        percentages</strong> — which is wrong, because it ignores attempt volume. One player's career
+        free-throw percentage read <strong>80.8%</strong> when the true value was <strong>90.8%</strong>.</p>
+      <p>The fix re-derives every percentage from totals, and now matches Basketball-Reference exactly:</p>
+    </div>
+    <pre><code>-- shooting % as total makes / total attempts, never an average of per-game %
+round(sum(fg)  * 1.0 / nullif(sum(fga),  0), 3) AS fg_pct,
+round(sum(fg3) * 1.0 / nullif(sum(fg3a), 0), 3) AS fg3_pct,
+round(sum(ft)  * 1.0 / nullif(sum(fta),  0), 3) AS ft_pct</code></pre>
+    <div class="callout">
+      <span class="c-tag">Bug · identity resolution</span>
+      <p>Player names break on accents (<em>Jokić</em>), hyphens (<em>Gilgeous-Alexander</em>), and
+        rookies missing from the bundled static list. The resolver applies Unicode NFKD
+        accent-folding and hyphen normalization, then falls back from the static list to a live API
+        lookup so brand-new players still resolve.</p>
+    </div>
+    <p>Validation is anchored to an external authority: aggregates are checked against
+      Basketball-Reference, and the data source itself is the official <code>stats.nba.com</code> API
+      rather than a scraper — a deliberate choice for authority and stability.</p>
+
+    <h2 id="decisions">Design decisions &amp; tradeoffs</h2>
+    <h3>DuckDB over a server database</h3>
+    <p>Embedded, zero-ops, columnar — millisecond analytical scans and native CSV/Parquet reading,
+      ideal for a single-user analytical workload. The tradeoff is that it's <strong>single-writer</strong>:
+      the warehouse rebuild needs exclusive access, so it can't run while the app holds a read
+      connection. I sequence around that explicitly (and it's exactly the kind of locking constraint
+      worth understanding rather than hiding).</p>
+    <h3>CSV landing layer</h3>
+    <p>Per-player CSVs are human-inspectable, diff-friendly in git, and a natural <strong>incremental
+      unit</strong> — you can re-pull one player without touching the rest. They're the raw tier that
+      feeds the curated warehouse.</p>
+    <h3>A shared query layer</h3>
+    <p>Putting every query in <code>data.py</code> keeps the API and UI honest — one source of truth,
+      no drift. It also makes the whole thing testable in isolation.</p>
+    <h3>nba_api over scraping</h3>
+    <p>The official endpoints are structured and authoritative; the cost is strict rate limits, which
+      the daemon is built to respect.</p>
+
+    <h2 id="testing">Testing</h2>
+    <p>The 82-0 game engine is a <strong>pure function</strong> with no I/O, so its scoring logic is
+      directly unit-testable. UI flows — navigation, team drill-down, player profiles, edge cases — are
+      exercised headlessly with Streamlit's <code>AppTest</code>. That harness is how a latent crash was
+      caught: a deep-bench rookie with a zero-attempt season produced NULL percentages that broke a
+      pandas type conversion, which is now NaN-safe.</p>
+
+    <h2 id="scale">Scale &amp; performance</h2>
+    <p>The expensive operation is API ingestion, which is already incremental — one file per player,
+      dedupe on resume. The dataset itself is small in absolute terms (tens of megabytes at ~540
+      players), so DuckDB serves queries in milliseconds. The next scaling step is Parquet plus
+      incremental upserts to retire full warehouse rebuilds; a move to Postgres would only be
+      warranted for concurrent multi-user writes.</p>
+
+    <h2 id="running">Running it locally</h2>
+    <pre><code># serve the app (reads the committed warehouse)
+pip install -r requirements.txt
+streamlit run vault_app.py
+
+# rebuild / extend the data (pipeline deps)
+pip install -r requirements-pipeline.txt
+python add_teams.py Celtics 76ers Heat   # discover → pull → warehouse → enrich</code></pre>
+
+    <h2 id="roadmap">Roadmap</h2>
+    <ul>
+      <li>ML career-trajectory projection on the season data.</li>
+      <li>"Chat with the Vault" — an LLM text-to-SQL layer over the warehouse.</li>
+      <li>Player embeddings &amp; similarity clustering.</li>
+      <li>An all-time-greats tier (the API supports historical players with full box scores).</li>
+      <li>Parquet + incremental upserts; a React frontend on the same REST API.</li>
+    </ul>
+    <p style="margin-top:2rem"><a class="readmore" href="index.html">← Back to the overview</a></p>
+  </article>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <h2>See it for yourself</h2>
+  <div class="foot-cta">
+    <a class="btn primary big" href="REPLACE_LIVE_APP_URL" target="_blank" rel="noopener">Explore the live app →</a>
+    <a class="btn ghost big" href="REPLACE_GITHUB_URL" target="_blank" rel="noopener">View the repository</a>
+  </div>
+  <div class="foot-links">
+    <a href="REPLACE_LINKEDIN_URL" target="_blank" rel="noopener">LinkedIn</a> ·
+    <a href="REPLACE_GITHUB_URL" target="_blank" rel="noopener">GitHub</a> ·
+    <a href="index.html">Overview</a>
+  </div>
+  <div class="foot-fine">NBA Player Vault · an end-to-end analytics data platform · data from stats.nba.com</div>
+</footer>
+
+</body>
+</html>
