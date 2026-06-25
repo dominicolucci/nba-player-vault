@@ -11,8 +11,10 @@ Interactive docs are auto-generated at /docs.
 
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
 
 import data
+import game82
 
 app = FastAPI(
     title="NBA Player Vault API",
@@ -91,3 +93,50 @@ def leaderboards(stat: str = Query("pts", description=f"one of: {', '.join(data.
         return data.leaderboards(stat, season, league, limit)
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
+
+
+@app.get("/teams", tags=["teams"])
+def list_teams(league: str = Query(..., description="NBA or WNBA")):
+    """Distinct teams in a league with player counts (Free Agents last)."""
+    return data.team_list(league)
+
+
+@app.get("/teams/{team}/players", tags=["teams"])
+def team_roster(team: str, league: str = Query(..., description="NBA or WNBA")):
+    """Players on a team for the league, sorted by career PPG (highest first)."""
+    return data.team_players(league, team)
+
+
+# ----------------------------- 82-0 game ---------------------------------
+class SimSlot(BaseModel):
+    """One drafted lineup line: the player + the (spun) season's averages."""
+    player: str
+    season: str | None = None
+    pts: float = 0
+    reb: float = 0
+    ast: float = 0
+
+
+# LeBron + Bronny in the same lineup -> +67 PRA ("23 and Me"). Kept beside the
+# engine so the win-loss mapping stays a single source of truth on the backend.
+_EASTER_EGG_DUO = {"lebron james", "bronny james"}
+_EASTER_EGG_BONUS = 67
+
+
+@app.get("/game/pool", tags=["game"])
+def game_pool(league: str = Query(..., description="NBA or WNBA")):
+    """82-0 draft pool: each player's peak-season line, position, and eligible court slots."""
+    pool = data.game_pool(league)
+    for p in pool:
+        p["slots"] = sorted(game82.eligibility(p.get("position", "")))
+    return pool
+
+
+@app.post("/game/simulate", tags=["game"])
+def game_simulate(lineup: list[SimSlot]):
+    """Project an 82-game record from a (partial or full) lineup via game82.simulate.
+    Works with 1-5 lines so the frontend can show a running record as players are drafted."""
+    lines = [s.model_dump() for s in lineup]
+    names = {ln["player"].lower() for ln in lines}
+    bonus = _EASTER_EGG_BONUS if _EASTER_EGG_DUO <= names else 0
+    return game82.simulate(lines, bonus=bonus)

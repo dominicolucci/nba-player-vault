@@ -78,6 +78,7 @@ def get_player(name):
     """Player metadata + career averages."""
     player = resolve_name(name)
     meta = q("SELECT * FROM players WHERE player = ?", [player])[0]
+    meta["team"] = _team_of(meta.get("player_id"))   # from teams.json (read-only)
     return {**meta, "career": career_averages(player)}
 
 

@@ -1,0 +1,294 @@
+/* ============================================================
+   NBA PLAYER VAULT — GLOBAL DESIGN SYSTEM
+   Editorial sports-analytics aesthetic (FiveThirtyEight / The Athletic)
+   Confident, data-dense, dark-mode-first with a full light theme.
+
+   This file is the single technical source of truth for design tokens.
+   The human-readable spec lives in `design-system/MASTER.md`.
+   Every page inherits these tokens automatically via Tailwind utilities
+   (bg-bg, text-muted, border-border, text-accent-text, font-display, …).
+   ============================================================ */
+
+@import "tailwindcss";
+
+/* Class/attribute-based dark mode keyed off [data-theme] on <html>.
+   Dark is the default; the inline script in layout.tsx sets the attribute
+   before paint to avoid a flash. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* ------------------------------------------------------------
+   1. RAW TOKENS — DARK (default)
+   ------------------------------------------------------------ */
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Surfaces — near-black newsprint, layered by elevation */
+  --bg: #090b12;          /* page background */
+  --panel: #0e121b;       /* recessed bands, table headers, insets */
+  --card: #151a25;        /* primary raised surface (cards) */
+  --card-2: #1b2130;      /* nested surface / hover */
+  --overlay: rgba(9, 11, 18, 0.82); /* sticky nav glass */
+
+  /* Hairlines */
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.15);
+
+  /* Text */
+  --fg: #e9edf4;          /* primary */
+  --muted: #98a1b2;       /* secondary */
+  --dim: #6b7384;         /* tertiary / captions */
+
+  /* Brand accent — amber (CTAs, highlights, primary data series) */
+  --accent: #f5a623;
+  --accent-strong: #ffb733;
+  --accent-foreground: #0a0c12;     /* text on amber fills */
+  --accent-text: #f5a623;           /* contrast-safe accent text on this theme */
+  --accent-soft: rgba(245, 166, 35, 0.14);
+
+  /* Secondary accent — blue (links, secondary data series) */
+  --info: #4aa3df;
+  --info-text: #5cb0e8;
+  --info-soft: rgba(74, 163, 223, 0.14);
+
+  /* Semantic stat deltas */
+  --positive: #3fbf86;
+  --positive-soft: rgba(63, 191, 134, 0.14);
+  --negative: #ef5b54;
+  --negative-soft: rgba(239, 91, 84, 0.14);
+
+  /* Focus ring */
+  --ring: rgba(245, 166, 35, 0.55);
+
+  /* Categorical chart scheme (multi-series: head-to-head, trajectories) */
+  --chart-1: #f5a623;  /* amber  */
+  --chart-2: #4aa3df;  /* blue   */
+  --chart-3: #46c08d;  /* green  */
+  --chart-4: #9b7fe0;  /* purple */
+  --chart-5: #ef6f8e;  /* rose   */
+  --chart-6: #36c2b4;  /* teal   */
+  --chart-7: #ff8a4c;  /* orange */
+  --chart-8: #6f86e0;  /* indigo */
+  --chart-grid: rgba(255, 255, 255, 0.06);
+
+  /* Elevation */
+  --elev-card: 0 16px 36px -18px rgba(0, 0, 0, 0.7);
+  --elev-pop: 0 24px 50px -24px rgba(0, 0, 0, 0.82);
+}
+
+/* ------------------------------------------------------------
+   2. RAW TOKENS — LIGHT (editorial daytime)
+   ------------------------------------------------------------ */
+[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: #f6f7f9;
+  --panel: #eef1f5;
+  --card: #ffffff;
+  --card-2: #f4f6f9;
+  --overlay: rgba(246, 247, 249, 0.85);
+
+  --border: rgba(15, 23, 42, 0.10);
+  --border-strong: rgba(15, 23, 42, 0.18);
+
+  --fg: #0f172a;
+  --muted: #475569;
+  --dim: #64748b;
+
+  --accent: #f5a623;
+  --accent-strong: #e0900f;
+  --accent-foreground: #1a1205;
+  --accent-text: #9a5b00;           /* darkened amber for AA text on paper */
+  --accent-soft: rgba(245, 166, 35, 0.16);
+
+  --info: #2f7fc0;
+  --info-text: #1d6aa8;
+  --info-soft: rgba(47, 127, 192, 0.12);
+
+  --positive: #1a8f60;
+  --positive-soft: rgba(26, 143, 96, 0.12);
+  --negative: #d23b33;
+  --negative-soft: rgba(210, 59, 51, 0.12);
+
+  --ring: rgba(245, 166, 35, 0.65);
+
+  --chart-1: #d98a12;
+  --chart-2: #2f7fc0;
+  --chart-3: #1f9e6e;
+  --chart-4: #7c5ad0;
+  --chart-5: #d9476e;
+  --chart-6: #149688;
+  --chart-7: #e06a28;
+  --chart-8: #4861c4;
+  --chart-grid: rgba(15, 23, 42, 0.07);
+
+  --elev-card: 0 14px 30px -20px rgba(15, 23, 42, 0.28);
+  --elev-pop: 0 22px 44px -24px rgba(15, 23, 42, 0.32);
+}
+
+/* ------------------------------------------------------------
+   3. TAILWIND THEME MAPPING
+   Exposes tokens as utilities. `inline` keeps them as live var()
+   references so they flip when [data-theme] changes — no rebuild.
+   ------------------------------------------------------------ */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-panel: var(--panel);
+  --color-card: var(--card);
+  --color-card-2: var(--card-2);
+  --color-overlay: var(--overlay);
+
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-dim: var(--dim);
+
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent-text: var(--accent-text);
+  --color-accent-soft: var(--accent-soft);
+
+  --color-info: var(--info);
+  --color-info-text: var(--info-text);
+  --color-info-soft: var(--info-soft);
+
+  --color-positive: var(--positive);
+  --color-positive-soft: var(--positive-soft);
+  --color-negative: var(--negative);
+  --color-negative-soft: var(--negative-soft);
+
+  --color-ring: var(--ring);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-chart-6: var(--chart-6);
+  --color-chart-7: var(--chart-7);
+  --color-chart-8: var(--chart-8);
+
+  /* Typography — editorial pairing */
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-space-grotesk), var(--font-inter), sans-serif;
+  --font-mono: var(--font-dm-mono), ui-monospace, monospace;
+
+  /* Radii */
+  --radius-card: 14px;
+  --radius-panel: 18px;
+
+  /* Shadows */
+  --shadow-card: var(--elev-card);
+  --shadow-pop: var(--elev-pop);
+
+  /* Shared content width */
+  --spacing-shell: 1180px;
+}
+
+/* ------------------------------------------------------------
+   4. BASE LAYER
+   ------------------------------------------------------------ */
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem; /* offset sticky header for in-page anchors */
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Tabular, lining figures everywhere numbers carry meaning */
+  .tnum {
+    font-variant-numeric: tabular-nums lining-nums;
+    font-feature-settings: "tnum" 1, "lnum" 1;
+  }
+
+  ::selection {
+    background-color: var(--accent-soft);
+    color: var(--fg);
+  }
+
+  /* Visible, on-brand focus for keyboard users only */
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Slim, themed scrollbars */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-strong) transparent;
+  }
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--border-strong);
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: var(--dim);
+  }
+}
+
+/* ------------------------------------------------------------
+   5. UTILITY HELPERS
+   ------------------------------------------------------------ */
+@layer utilities {
+  /* Page gutter container, max-width capped to the shell width */
+  .container-shell {
+    width: 100%;
+    max-width: var(--spacing-shell);
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 4vw, 2.5rem);
+  }
+
+  /* Faint amber/blue glow background used behind heroes & footers */
+  .aurora {
+    background-image:
+      radial-gradient(720px 340px at 15% -10%, var(--accent-soft), transparent 60%),
+      radial-gradient(620px 380px at 95% 0%, var(--info-soft), transparent 65%);
+  }
+
+  /* Subtle entrance for rotating/swapped content */
+  .animate-hero-in {
+    animation: hero-in 0.5s ease both;
+  }
+}
+
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

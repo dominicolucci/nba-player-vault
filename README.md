@@ -30,6 +30,7 @@ warehouse.py ───► player_vault.duckdb              ← CURATED warehouse
    ▼              (games · players · season_averages view)
 data.py  ← single shared query layer (read-only)
    ├──► api.py        (FastAPI — REST + OpenAPI docs)
+   │      └──► frontend/   (Next.js + Tailwind web app — typed REST client)
    └──► vault_app.py  (Streamlit + Plotly UI)
 ```
 
@@ -45,6 +46,9 @@ functions, so SQL logic is never duplicated or allowed to drift.
 - **The 82-0 game** — draft a starting five; each player's real production maps to a real NBA
   team's win-loss record as you chase a perfect, undefeated season.
 - **NBA / WNBA** toggle throughout.
+- **Web app (Next.js + Tailwind)** — a typed React frontend on the REST API: a rotating hero of
+  20+ PPG career scorers, player browse + profiles (Recharts trajectory, game log, month splits),
+  and the 82-0 draft — all driven by one tokenized design system with dark/light themes.
 
 ## Engineering highlights
 
@@ -65,7 +69,8 @@ functions, so SQL logic is never duplicated or allowed to drift.
 | **DuckDB** | Embedded, zero-ops, columnar — ms analytical scans | Single-writer; Postgres for concurrent writes |
 | **nba_api** | Official, authoritative, structured | Strict rate limits → global gate + backoff |
 | **FastAPI** | Typed REST + auto OpenAPI docs | Read-only; logic lives in the shared layer |
-| **Streamlit + Plotly** | Ships an interactive data UI fast | Less layout control than React (planned) |
+| **Streamlit + Plotly** | Ships an interactive data UI fast (internal/demo) | Less layout control than React — now superseded by the Next.js app |
+| **Next.js + Tailwind** | Typed React frontend on the REST API; tokenized design system, dark/light | Adds a build step + a second runtime to operate |
 
 ## Project structure
 
@@ -81,6 +86,7 @@ Newer_Implementation/
 ├── vault_app.py         # Streamlit + Plotly UI
 ├── game82.py            # pure 82-0 simulation engine
 ├── site/                # marketing site (index.html, technical.html)
+├── frontend/            # Next.js + Tailwind web app (typed REST client for api.py)
 └── *_csv_exports/, player_vault.duckdb, positions.json, teams.json
 ```
 
@@ -109,7 +115,7 @@ dependencies from `requirements.txt`.
 ## Roadmap
 
 ML career-trajectory projection · LLM "chat with the vault" (text-to-SQL) · player embeddings ·
-all-time-greats tier · Parquet + incremental upserts · React frontend.
+all-time-greats tier · Parquet + incremental upserts · finish the Next.js `/compare` + `/leaderboards` pages.
 
 ---
 
