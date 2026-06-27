@@ -95,6 +95,12 @@ def leaderboards(stat: str = Query("pts", description=f"one of: {', '.join(data.
         raise HTTPException(status_code=400, detail=str(e))
 
 
+@app.get("/seasons", tags=["leaderboards"])
+def list_seasons(league: str | None = Query(None, description="NBA or WNBA")):
+    """Distinct seasons (newest first), optionally by league — drives the season picker."""
+    return data.seasons(league)
+
+
 @app.get("/teams", tags=["teams"])
 def list_teams(league: str = Query(..., description="NBA or WNBA")):
     """Distinct teams in a league with player counts (Free Agents last)."""

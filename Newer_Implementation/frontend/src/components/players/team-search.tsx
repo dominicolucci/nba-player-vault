@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { Kicker } from "@/components/ui";
 import { cn } from "@/lib/cn";
+import { teamLogoUrl } from "@/lib/team-logos";
 import type { League, TeamSummary } from "@/lib/types";
 
 /**
@@ -59,18 +60,36 @@ export function TeamSearch({
         <ul className="flex flex-wrap gap-2">
           {filtered.map((t) => {
             const active = t.team === selectedTeam;
+            const logo = teamLogoUrl(t.team);
             return (
               <li key={t.team}>
                 <Link
                   href={`/players?league=${league}&team=${encodeURIComponent(t.team)}`}
                   aria-current={active ? "true" : undefined}
                   className={cn(
-                    "inline-flex items-center gap-2 rounded-lg border px-3 py-1.5 text-sm transition-colors duration-150",
+                    "inline-flex items-center gap-2 rounded-lg border py-1.5 pl-2 pr-3 text-sm transition-colors duration-150",
                     active
                       ? "border-accent bg-accent-soft text-accent-text"
                       : "border-border bg-card-2 text-muted hover:border-border-strong hover:text-fg",
                   )}
                 >
+                  {logo ? (
+                    <span className="flex h-[18px] w-[18px] shrink-0 items-center justify-center overflow-hidden rounded bg-white/95">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={logo}
+                        alt=""
+                        width={16}
+                        height={16}
+                        loading="lazy"
+                        className="h-4 w-4 object-contain"
+                        onError={(e) => {
+                          const tile = e.currentTarget.parentElement;
+                          if (tile) tile.style.display = "none";
+                        }}
+                      />
+                    </span>
+                  ) : null}
                   {t.team}
                   <span className="font-mono text-xs tabular-nums text-dim">{t.count}</span>
                 </Link>

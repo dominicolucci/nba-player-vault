@@ -171,6 +171,11 @@ export function getLeaderboards(
   return apiFetch<LeaderboardRow[]>(`/leaderboards${qs(params)}`, opts);
 }
 
+/** GET /seasons — distinct seasons (newest first), optionally by league. */
+export function getSeasons(league?: League, opts?: FetchOptions): Promise<string[]> {
+  return apiFetch<string[]>(`/seasons${qs({ league })}`, opts);
+}
+
 /** GET /game/pool — 82-0 draft pool for a league. */
 export function getGamePool(league: League, opts?: FetchOptions): Promise<GamePoolPlayer[]> {
   return apiFetch<GamePoolPlayer[]>(`/game/pool${qs({ league })}`, opts);

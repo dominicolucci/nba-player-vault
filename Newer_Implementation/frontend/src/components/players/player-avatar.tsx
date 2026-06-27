@@ -17,14 +17,23 @@ export interface PlayerAvatarProps {
   size?: number;
   /** Accent ring (use for the focal player on a profile). */
   ring?: boolean;
+  /** Ring colour when `ring` is set (default amber). */
+  ringTone?: "accent" | "info";
   className?: string;
 }
 
 /** Headshot when available; a mono monogram fallback otherwise. */
-export function PlayerAvatar({ name, src, size = 44, ring = false, className }: PlayerAvatarProps) {
+export function PlayerAvatar({
+  name,
+  src,
+  size = 44,
+  ring = false,
+  ringTone = "accent",
+  className,
+}: PlayerAvatarProps) {
   const shared = cn(
     "shrink-0 rounded-full bg-card-2 object-cover",
-    ring ? "border-2 border-accent" : "border border-border",
+    ring ? (ringTone === "info" ? "border-2 border-info" : "border-2 border-accent") : "border border-border",
     className,
   );
   if (src) {

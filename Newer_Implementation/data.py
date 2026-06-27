@@ -197,6 +197,17 @@ def game_pool(league):
     return rows
 
 
+def seasons(league=None):
+    """Distinct seasons in the warehouse, newest first (optionally by league).
+    Drives the leaderboards season picker."""
+    if league:
+        rows = q("SELECT DISTINCT season FROM season_averages WHERE upper(league) = upper(?) "
+                 "ORDER BY season DESC", [league])
+    else:
+        rows = q("SELECT DISTINCT season FROM season_averages ORDER BY season DESC")
+    return [r["season"] for r in rows]
+
+
 def leaderboards(stat="pts", season=None, league=None, limit=20):
     if stat not in AVG_STATS:
         raise ValueError(f"stat must be one of {AVG_STATS}")
